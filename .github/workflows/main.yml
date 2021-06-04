@@ -7,7 +7,6 @@ on: [push, pull_request]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy:
-    needs: [build_and_test, deploy-backend]
     if: github.ref == 'refs/heads/main'
 
     runs-on: ubuntu-latest
