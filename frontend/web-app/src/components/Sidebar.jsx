@@ -36,7 +36,7 @@ function Sidebar() {
     return (
         <div style={ sidebarStyle }>
             <h1 style={ headingStyle }>My tasks</h1>
-            <h2 id="task_text" style={ bodyStyle }></h2>
+            <h2 id="task_text" style={ bodyStyle }> </h2>
         </div>
     )
 };

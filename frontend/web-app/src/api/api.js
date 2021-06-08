@@ -11,7 +11,7 @@ const api = {
     getTask: () =>
     instance({
         'method':'GET',
-        'url': '/tasks'
+        'url': '/tasks/'
     }),
     acceptTask: (data) =>
     instance({
