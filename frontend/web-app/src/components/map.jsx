@@ -39,7 +39,7 @@ const markers = [Marker1]
 
     return (
         //<LoadScript googleMapsApiKey = {process.env.REACT_APP_API_KEY} >
-        <LoadScript googleMapsApiKey = {"AIzaSyB-lFtvpDUWfhVdQ2U05Sm5iOLe5anZ0rs"} >
+        <LoadScript googleMapsApiKey = {""} >
             <GoogleMap
                 id = { "map" }
                 mapContainerStyle = { containerStyle }
@@ -85,7 +85,7 @@ class MapComponent extends Component {
      render() {
          console.log(this.map)
         return(
-            <LoadScript googleMapsApiKey = {"AIzaSyB-lFtvpDUWfhVdQ2U05Sm5iOLe5anZ0rs"} >
+            <LoadScript googleMapsApiKey = {""} >
                 <div ref={this.map.getRef()}/>
             </LoadScript>
         )}
