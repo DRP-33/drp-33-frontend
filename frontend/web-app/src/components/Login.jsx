@@ -2,6 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useHistory } from "react-router-dom";
+import api from '../api/api'
 
 const LoginViewStyle = {
     height: "100vh",
@@ -17,28 +18,32 @@ const FormStyle = {
 }
 
 function Login() {
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
+    const [username, setUsername] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [token, setToken] = React.useState('');
     const history = useHistory();
 
     function validateForm() {
-        return email.length > 0 && password.length > 0;
+        return username.length > 0 && password.length > 0;
     }
 
     function handleSubmit(event) {
         event.preventDefault();
+        var formData = new FormData();
+        formData.append('username', username);
+        formData.append('password', password);
+        api.login(formData).then(function(response) {
+            setToken(response.token);
+        });
         history.push("/map");
     }
 
     return (
         <div style={LoginViewStyle}>
             <Form style={FormStyle} onSubmit={handleSubmit}>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
+                <Form.Group controlId="formBasicUsername">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="username" placeholder="Enter username" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
