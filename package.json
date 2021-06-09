@@ -1,0 +1,26 @@
+{
+  "name": "drp-33-frontend",
+  "version": "1.0.0",
+  "description": "hi",
+  "main": "index.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "json": "^11.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DRP-33/drp-33-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DRP-33/drp-33-frontend/issues"
+  },
+  "homepage": "https://github.com/DRP-33/drp-33-frontend#readme"
+}
