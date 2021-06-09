@@ -17,6 +17,7 @@ const headingStyle = {
     alignItems: "center",
     textAlign: "center",
     color: "#FFFFFF",
+    marginTop: "7%",
     padding: "2%"
 }
 
