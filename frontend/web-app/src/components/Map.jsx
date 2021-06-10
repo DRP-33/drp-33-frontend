@@ -50,6 +50,7 @@ function MapComponent() {
             >
             {markers()}
             </GoogleMap>
+            
         </LoadScript>
     )
 }
