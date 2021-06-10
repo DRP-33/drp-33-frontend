@@ -5,8 +5,8 @@ import { useHistory } from "react-router-dom";
 import api from '../api/api'
 
 const formStyle = {
-    width: '100%',
-    marginTop: '18%'
+    width: '70%',
+    marginTop: '8%'
 }
 
 function CreateRequest() {
@@ -32,8 +32,8 @@ function CreateRequest() {
     }
 
     return (
-        <div>
-            <Form onSubmit={handleSubmit} style={formStyle}>
+        <div style={formStyle}>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group>
                     <Form.Label>Phone Number</Form.Label>
                     <Form.Control type="text" placeholder="Enter phone number" value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)}/>
