@@ -1,4 +1,4 @@
-import {React, Component} from 'react'
+import React, {Component} from 'react'
 import MapComponent from '../components/map.jsx'
 import Sidebar from '../components/Sidebar.jsx'
 import {GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
