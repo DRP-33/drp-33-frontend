@@ -38,8 +38,7 @@ const markers = [Marker1]
     }, []);
 
     return (
-        //<LoadScript googleMapsApiKey = {process.env.REACT_APP_API_KEY} >
-        <LoadScript googleMapsApiKey = {""} >
+        <LoadScript googleMapsApiKey = {process.env.REACT_APP_API_KEY} >
             <GoogleMap
                 id = { "map" }
                 mapContainerStyle = { containerStyle }
@@ -55,10 +54,8 @@ const markers = [Marker1]
 class MapComponent extends Component {
     constructor(props) {
         super(props)
-        this.map = null
-    }
+        this.mapRef = React.createRef()
 
-    componentDidMount() {
         this.map = new GoogleMap({
             id: "map",
             mapContainerStyle: containerStyle,
@@ -66,27 +63,26 @@ class MapComponent extends Component {
             zoom: 15,
             clickableIcons: false
         })
+        console.log("Constructing")
+        console.log(this.map)
+        console.log(this.mapRef)
 
-        this.placeMMarkers(this.map)
+        //this.placeMarkers(this.map)
     }
 
-    componentDidUpdate() {
-        this.placeMMarkers(this.map)
-    }
-
-    placeMMarkers = (map) => {
+    placeMarkers = (map) => {
         markers.forEach((m) => {
             m.map = map;
-           let marker= new Marker(m)
+           let marker = new Marker(m)
          }
        );
-     }
+    }
 
-     render() {
-         console.log(this.map)
+    render() {
+        console.log("Rendering")
         return(
-            <LoadScript googleMapsApiKey = {""} >
-                <div ref={this.map.getRef()}/>
+            <LoadScript googleMapsApiKey = {process.env.REACT_APP_API_KEY} >
+                <div ref={this.mapRef}/>
             </LoadScript>
         )}
 }
