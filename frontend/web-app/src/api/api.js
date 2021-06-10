@@ -3,27 +3,37 @@ import axios from 'axios'
 const instance = axios.create({
     baseURL: 'https://drp-33.herokuapp.com',
     headers: {
-        //"Access-Control-Allow-Origin": "*"
     }
 });
 
 const api = {
-    getTask: () =>
+    getTask: (token) =>
     instance({
         'method':'GET',
-        'url': '/tasks/'
+        'url': '/tasks/',
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
     }),
-    acceptTask: (data) =>
+    acceptTask: (data, token) =>
     instance({
         'method': 'post',
         'url': '/task_a/',
-        'data': data
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
     }),
     login: (data) =>
     instance({
         'method': 'post',
         'url': '/api-token-auth/',
-        'data': data
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json'
+        }
     })
 }
 

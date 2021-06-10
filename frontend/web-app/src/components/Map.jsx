@@ -1,6 +1,7 @@
 import React from 'react';
-import api from '../api/api'
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import Pin from './Pin.jsx';
+import api from '../api/api';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 // container style
 const containerStyle = {
@@ -18,16 +19,24 @@ const center = {
 
 // functional map component
 function MapComponent() {
-    let [key, setKey] = React.useState(0);
-    let [message, setMessage] = React.useState('');
-    let [position, setPosition] = React.useState({lat: 0, lng: 0});
+    let [data, setData] = React.useState([]);
+    let [len, setLen] = React.useState(0);
+
     React.useEffect(() => {
-        api.getTask().then(function (response){
-            setKey(response.data[0].pk);
-            setMessage(response.data[0].fields.description);
-            setPosition({lat: parseFloat(response.data[0].fields.s_latitude), lng: parseFloat(response.data[0].fields.s_longitude)})
+        console.log('Token ' + localStorage.getItem('token'));
+        api.getTask(localStorage.getItem('token')).then(function (response){
+            setData(response.data);
+            setLen(response.data.length);
         });
     }, []);
+
+    function markers() {
+        var marker = [];
+        for(var i = 0; i < len; i++) {
+            marker.push(Pin({fields: data[i].fields, key: data[i].pk}));
+        }
+        return marker;
+    }
 
     return (
         <LoadScript googleMapsApiKey = {process.env.REACT_APP_API_KEY} >
@@ -38,24 +47,14 @@ function MapComponent() {
                 zoom = { 15 }
                 clickableIcons = { false }
             >
-                <Marker 
-                key = {key} 
-                position={position} 
-                onClick={() => onClick(key, message)}/>
+            {markers()}
             </GoogleMap>
         </LoadScript>
     )
 }
 
 // For now auto-accepts, for later will display overlay and ask to accept
-function onClick(key, message) {
-    var formData = new FormData();
-    formData.append('id', '3');
-    formData.append('acceptor_id', '1');
-    api.acceptTask(formData);
-    
-    document.getElementById('task_text').innerText = message;
-}
+
 
 
 export default MapComponent;

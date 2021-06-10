@@ -20,8 +20,6 @@ const FormStyle = {
 function Login() {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
-    const [failed, setFailed] = React.useState(false);
-    const [token, setToken] = React.useState('');
     const history = useHistory();
 
     function validateForm() {
@@ -34,10 +32,10 @@ function Login() {
         formData.append('username', username);
         formData.append('password', password);
         api.login(formData).then(function(response) {
-            setToken(response.token);
+            console.log(response.data.token);
+            localStorage.setItem('token', response.data.token);
             history.push("/map");
         }).catch((error) => {
-            setFailed(true);
             alert("Wrong login credentials! Try again.");   
         });
     }
