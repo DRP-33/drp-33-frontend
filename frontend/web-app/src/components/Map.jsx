@@ -10,6 +10,7 @@ const containerStyle = {
     float: 'right'
 };
 
+
 //center of a map
 const center = {
     lat: 51.49954166513176,
