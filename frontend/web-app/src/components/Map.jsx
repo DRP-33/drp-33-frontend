@@ -23,7 +23,7 @@ function MapComponent() {
     let [len, setLen] = React.useState(0);
 
     React.useEffect(() => {
-        console.log('Token ' + localStorage.getItem('token'));
+        //console.log('Token ' + localStorage.getItem('token'));
         api.getTask(localStorage.getItem('token')).then(function (response){
             setData(response.data);
             setLen(response.data.length);
@@ -32,6 +32,7 @@ function MapComponent() {
 
     function markers() {
         var marker = [];
+        //console.log(len);
         for(var i = 0; i < len; i++) {
             marker.push(Pin({fields: data[i].fields, key: data[i].pk}));
         }

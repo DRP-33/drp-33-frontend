@@ -34,6 +34,16 @@ const api = {
         'headers': {
             'Content-Type': 'application/json'
         }
+    }),
+    addTask: (data, token) => 
+    instance({
+        'method': 'post',
+        'url': '/task_c/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
     })
 }
 
