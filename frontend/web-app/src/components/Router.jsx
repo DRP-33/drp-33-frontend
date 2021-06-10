@@ -3,6 +3,7 @@ import Login from './Login';
 import MapView from '../views/MapView'
 import CreateRequestView from '../views/CreateRequestView';
 import PhonePopup from './PhonePopup';
+import SupplyPopup from './SupplyPopUp';
 
 function Router() {
     return (
@@ -16,6 +17,9 @@ function Router() {
                 </Route>
                 <Route path="/phonepopup">
                     <PhonePopup />
+                </Route>
+                <Route path="/supplypopup">
+                    <SupplyPopup />
                 </Route>
                 <Route path="/">
                     <Login />
