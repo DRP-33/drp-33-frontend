@@ -20,6 +20,7 @@ const FormStyle = {
 function Login() {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [failed, setFailed] = React.useState(false);
     const [token, setToken] = React.useState('');
     const history = useHistory();
 
@@ -34,8 +35,11 @@ function Login() {
         formData.append('password', password);
         api.login(formData).then(function(response) {
             setToken(response.token);
+            history.push("/map");
+        }).catch((error) => {
+            setFailed(true);
+            alert("Wrong login credentials! Try again.");   
         });
-        history.push("/map");
     }
 
     return (
