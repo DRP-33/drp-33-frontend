@@ -1,7 +1,6 @@
 import React from 'react';
 import api from '../api/api'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import Overlay from './Overlay';
 
 // container style
 const containerStyle = {
@@ -44,6 +43,7 @@ function MapComponent() {
                 position={position} 
                 onClick={() => onClick(key, message)}/>
             </GoogleMap>
+            
         </LoadScript>
     )
 }
@@ -51,7 +51,6 @@ function MapComponent() {
 // For now auto-accepts, for later will display overlay and ask to accept
 function onClick(key, message) {
     var formData = new FormData();
-    <Overlay trigger={true}> overlay </Overlay>
     formData.append('id', '3');
     formData.append('acceptor_id', '1');
     api.acceptTask(formData);

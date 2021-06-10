@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import MapView from '../views/MapView'
 import CreateRequestView from '../views/CreateRequestView';
+import PhonePopup from './PhonePopup';
 
 function Router() {
     return (
@@ -13,9 +14,13 @@ function Router() {
                 <Route path="/create-request">
                     <CreateRequestView />
                 </Route>
+                <Route path="/phonepopup">
+                    <PhonePopup />
+                </Route>
                 <Route path="/">
                     <Login />
                 </Route>
+                
             </Switch>
         </BrowserRouter>
     )
