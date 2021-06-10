@@ -99,5 +99,12 @@
     color: white;
     font-family: "Saira";
     position:absolute;
-    bottom:0;
+    bottom:2%;
+}
+.mapContainer {
+    text-align:center;
+    background-color: grey;
+    border: grey;
+    margin: 2%;
+    height: 80%;
 }

@@ -28,6 +28,9 @@ function SupplyPopup() {
                         2 packs of strepsils. I put this pharmacy down but I dont mind where</p>
                     </div>
                     <div className="rightContainer">
+                        <div className="mapContainer">
+                            <p>Map goes here</p>
+                        </div>
                         <div className="btnContainer">
                             <button className="accept-btn">Accept Request</button>
                         </div>
