@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useHistory } from "react-router-dom";
 import api from '../api/api'
 
 const formStyle = {
@@ -13,7 +12,6 @@ function CreateRequest() {
     const [phonenumber, setPhonenumber] = React.useState("");
     const [availableHours, setAvailablehours] = React.useState("");
     const [details, setDetails] = React.useState("");
-    const history = useHistory();
 
     function validateForm() {
         return phonenumber.length > 0 && availableHours.length > 0 && details.length > 0;

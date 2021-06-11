@@ -2,6 +2,9 @@ import React from 'react';
 import Pin from './Pin.jsx';
 import api from '../api/api';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import PhonePopup from './PhonePopup.jsx';
+import SupplyPopUp from './SupplyPopUp.jsx';
+
 
 // container style
 const containerStyle = {
@@ -21,6 +24,8 @@ const center = {
 function MapComponent() {
     let [data, setData] = React.useState([]);
     let [len, setLen] = React.useState(0);
+    let [popUpData, setPopUpData] = React.useState([]);
+    let [popUp, setPopUp] = React.useState(0);
 
     React.useEffect(() => {
         //console.log('Token ' + localStorage.getItem('token'));
@@ -34,9 +39,26 @@ function MapComponent() {
         var marker = [];
         //console.log(len);
         for(var i = 0; i < len; i++) {
-            marker.push(Pin({fields: data[i].fields, key: data[i].pk}));
+            marker.push(Pin({fields: data[i].fields, key: data[i].pk, func: {showPopUp}}));
         }
         return marker;
+    }
+
+    const showPopUp = (data) => {
+        setPopUpData(data);
+        if(data.fields.task_type === 'PR') {
+            setPopUp(1);
+        } else {
+            setPopUp(2);
+        }
+    }
+
+    function renderPopUp() {
+        if(popUp === 1) {
+            return PhonePopup(popUpData);
+        } else if(popUp === 2)  {
+            return SupplyPopUp(popUpData);
+        }
     }
 
     return (
@@ -49,6 +71,7 @@ function MapComponent() {
                 clickableIcons = { false }
             >
             {markers()}
+            {renderPopUp()}
             </GoogleMap>
             
         </LoadScript>

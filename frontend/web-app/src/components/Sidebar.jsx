@@ -81,16 +81,16 @@ function Sidebar() {
         <div style={ sidebarStyle }>
             <h1 style={ headingStyle } onClick={() => history.push('/map')}>My tasks</h1>
             <div>
-            <ul class ="tasks" style= { listStyle }>
+            <ul className ="tasks" style= { listStyle }>
                 <li style={ listEntry } onClick={() => history.push('/create-request')}>
-                <a title="" data-placement="top" data-toggle="tooltip" style={inlineImg}> 
+                
                 <FontAwesomeIcon style={iconStyle} icon={faPlusSquare} size="2x" />
-                <span id="task_text" style={ bodyStyle }> Create New Request </span></a>
+                <span id="task_text" style={ bodyStyle }> Create New Request </span>
                 </li>
                 <li style={ listEntry }>
-                <a title="" data-placement="top" data-toggle="tooltip" style={inlineImg}> 
+                
                 <FontAwesomeIcon style={iconStyle} icon={faCalendar} size="2x" />
-                <span id="task_text" style={ bodyStyle }>  Manage My Requests </span></a>
+                <span id="task_text" style={ bodyStyle }>  Manage My Requests </span>
                 </li>
             </ul>
             </div>
@@ -98,7 +98,7 @@ function Sidebar() {
             <hr style={ topSeparator }></hr>
 
             <div> 
-            <ul class ="tasks" style= { listStyle }>
+            <ul className ="tasks" style= { listStyle }>
                 <li style={ listEntry }>
                 <p title="" data-placement="top" data-toggle="tooltip" style={inlineImg}> 
                 <FontAwesomeIcon style={iconStyle} icon={faCalendar} size="2x" />
@@ -119,7 +119,7 @@ function Sidebar() {
             
             <hr style={ bottomSeparator }></hr>
             
-            <ul class ="tasks" style= { listStyle }>
+            <ul className ="tasks" style= { listStyle }>
                 <li style={ listEntry }>
                 <p title="" data-placement="top" data-toggle="tooltip" style={inlineImg}> 
                 <FontAwesomeIcon style={iconStyle} icon={faUser} size="2x" />

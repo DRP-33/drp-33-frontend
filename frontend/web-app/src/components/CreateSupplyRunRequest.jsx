@@ -1,8 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import fromGivenAddress from '../api/geocode';
-import { useHistory } from "react-router-dom";
 import api from '../api/api'
 
 const formStyle = {
@@ -14,7 +12,6 @@ function CreateRequest() {
     const [storeLocation, setStoreLocation] = React.useState("");
     const [deliveryAddress, setDeliveryAddress] = React.useState("");
     const [details, setDetails] = React.useState("");
-    const history = useHistory();
 
     function validateForm() {
         return storeLocation.length > 0 && deliveryAddress.length > 0 && details.length > 0;

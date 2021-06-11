@@ -18,7 +18,8 @@ const containerStyle = {
     float: 'right',
     padding: "5%",
     display: 'flex',
-    justifyContent: 'center',
+    fontFamily: "Saira",
+    fontStyle: "normal",
     flexDirection: 'column',
     alignItems: 'center',
     texAlign: 'center'
