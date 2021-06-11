@@ -24,10 +24,10 @@ function CreateRequest() {
         formData.append('description',details);
         formData.append('date', new Date().toJSON());
         formData.append('task_type', "SR");
-        formData.append('s_longitude', /*fromGivenAddress(storeLocation).lng*/ 0);
-        formData.append('s_latitude', /*fromGivenAddress(storeLocation).lat*/ 0);
-        formData.append('d_longitude', /*fromGivenAddress(deliveryAddress).lng*/ 0);
-        formData.append('d_latitude', /*fromGivenAddress(deliveryAddress).lat*/ 0);
+        formData.append('s_longitude', /*fromGivenAddress(storeLocation).lng*/ -0.2620758943035952);
+        formData.append('s_latitude', /*fromGivenAddress(storeLocation).lat*/ 51.523001163042466);
+        formData.append('d_longitude', /*fromGivenAddress(deliveryAddress).lng*/ -0.2620758943035952);
+        formData.append('d_latitude', /*fromGivenAddress(deliveryAddress).lat*/ 51.523001163042466);
         //console.log(formData);
         api.addTask(formData, localStorage.getItem('token')).then(function(response) {
             alert("Task added");

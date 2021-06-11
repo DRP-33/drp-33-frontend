@@ -32,7 +32,7 @@ function Login() {
         formData.append('username', username);
         formData.append('password', password);
         api.login(formData).then(function(response) {
-            console.log(response.data.token);
+            //console.log(response.data.token);
             localStorage.setItem('token', response.data.token);
             history.push("/map");
         }).catch((error) => {
