@@ -1,0 +1,92 @@
+
+.sidebarStyle {
+    width: 20%;
+    float: left;
+    height: 100vh;
+    background-color: #E25353;
+    position: relative;
+    padding: 0.5%
+}
+
+.headingStyle  {
+    font-family: Saira;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 63px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 7%;
+    padding: 2%;
+    cursor: pointer;
+}
+
+.headingStyle:hover {
+    transform: scale(0.8);
+    transition-duration: 0.2s;
+}
+
+.bodyStyle  {
+    font-family: Saira;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 2%
+}
+
+.listStyle  {
+    list-style-type: none;
+    font-size: 80%
+}
+
+.listEntry  {
+    margin: 20px 0
+}
+
+.clickableListEntry  {
+    margin: 20px 0;
+    cursor: pointer
+}
+
+.clickableListEntry:hover {
+    transform: scale(0.9);
+    transition-duration: 0.2s;
+}
+
+.inlineImg  {
+    text-decoration: none
+}
+
+.iconStyle  {
+    color: white;
+    position: relative;
+    align-items: center;
+    margin-right: 20px;
+    top: 5px;
+    left: 5px
+}
+
+.topSeparator  {
+    color: white;
+    background-color: white;
+    margin: 10% 5%;
+    height: 3px;
+}
+
+.bottomSeparator  {
+    color: white;
+    background-color: white;
+    margin: 10% 5%; 
+    height: 3px
+}
+
+.manageProfile  {
+    position: absolute;
+    bottom: 2%;
+    width: 95%
+}

@@ -1,6 +1,6 @@
 import { faWindowClose } from '@fortawesome/free-regular-svg-icons'
 import React from 'react'
-import './Popup.css'
+import '../css/Popup.css'
 import '../fontawesome';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

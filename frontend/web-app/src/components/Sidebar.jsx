@@ -1,131 +1,63 @@
 import { faUser, faCalendar, faPlusSquare } from '@fortawesome/free-regular-svg-icons';
+import { faPlus, faTasks } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import '../fontawesome';
 import { useHistory } from "react-router-dom";
-
-const sidebarStyle = {
-    width: "20%",
-    float: "left",
-    height: "100vh",
-    backgroundColor: "#E25353",
-    position: "relative",
-    padding: "0.5%"
-}
-
-const headingStyle = {
-    fontFamily: "Saira",
-    fontStyle: "normal",
-    fontWeight: 600,
-    fontSize: "40px",
-    lineHeight: "63px",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#FFFFFF",
-    marginTop: "7%",
-    padding: "2%"
-}
-
-const bodyStyle = {
-    fontFamily: "Saira",
-    fontStyle: "normal",
-    fontWeight: 600,
-    fontSize: "18px",
-    lineHeight: "25px",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#FFFFFF",
-    padding: "2%"
-}
-
-const listStyle = {
-    listStyleType: "none",
-    fontSize: "80%"
-}
-
-const listEntry = {
-    margin: "20px 0"
-}
-
-const inlineImg = {
-    textDecoration: "none"
-}
-
-const iconStyle = {
-    color: "white",
-    position: "relative",
-    alignItems: "center",
-    marginRight: "20px",
-    top: "5px",
-    left: "5px"
-}
-
-// made both these (they are the same currently) because i cant seem to make the bottom one go to the bottom
-const topSeparator = {
-    color: "white",
-    backgroundColor: "white",
-    margin: "10% 5%",
-    height: "3px",
-}
-
-const bottomSeparator = {
-    color: "white",
-    backgroundColor: "white",
-    margin: "10% 5%", 
-    height: "3px"
-}
+import '../css/Sidebar.css'
 
 function Sidebar() {
     const history = useHistory();
     return (
-        <div style={ sidebarStyle }>
-            <h1 style={ headingStyle } onClick={() => history.push('/map')}>My tasks</h1>
+        <div className="sidebarStyle">
+            <h1 className="headingStyle" onClick={() => history.push('/map')}>My tasks</h1>
             <div>
-            <ul className ="tasks" style= { listStyle }>
-                <li style={ listEntry } onClick={() => history.push('/create-request')}>
-                
-                <FontAwesomeIcon style={iconStyle} icon={faPlusSquare} size="2x" />
-                <span id="task_text" style={ bodyStyle }> Create New Request </span>
+            <ul className="listStyle">
+                <li className=" clickableListEntry" onClick={() => history.push('/create-request')}>
+                    <FontAwesomeIcon className="iconStyle" icon={faPlus} size="2x" />
+                    <span id="task_text" className="bodyStyle"> Create New Request </span>
                 </li>
-                <li style={ listEntry }>
-                
-                <FontAwesomeIcon style={iconStyle} icon={faCalendar} size="2x" />
-                <span id="task_text" style={ bodyStyle }>  Manage My Requests </span>
+                <li className=" clickableListEntry" onClick={() => history.push('/manage-request')}>
+                    <FontAwesomeIcon className="iconStyle" icon={faTasks} size="2x" />
+                    <span id="task_text" className=" bodyStyle">  Manage My Requests </span>
                 </li>
             </ul>
             </div>
 
-            <hr style={ topSeparator }></hr>
+            <hr className=" topSeparator"></hr>
 
             <div> 
-            <ul className ="tasks" style= { listStyle }>
-                <li style={ listEntry }>
-                <p title="" data-placement="top" data-toggle="tooltip" style={inlineImg}> 
-                <FontAwesomeIcon style={iconStyle} icon={faCalendar} size="2x" />
-                <span id="task_text" style={ bodyStyle }> Phone Call </span></p>
+            <ul className="listStyle">
+                <li className="listEntry" >
+                <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
+                <FontAwesomeIcon className="iconStyle" icon={faCalendar} size="2x" />
+                <span id="task_text" className=" bodyStyle"> Phone Call </span></p>
                 </li>
-                <li style={ listEntry }>
-                <p title="" data-placement="top" data-toggle="tooltip" style={inlineImg}> 
-                <FontAwesomeIcon style={iconStyle} icon={faCalendar} size="2x" />
-                <span id="task_text" style={ bodyStyle }> Supply Run </span></p>
+                <li className=" listEntry">
+                <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
+                <FontAwesomeIcon className="iconStyle" icon={faCalendar} size="2x" />
+                <span id="task_text" className=" bodyStyle"> Supply Run </span></p>
                 </li>
-                <li style={ listEntry }>
-                <p title="" data-placement="top" data-toggle="tooltip" style={inlineImg}> 
-                <FontAwesomeIcon style={iconStyle} icon={faCalendar} size="2x" />
-                <span id="task_text" style={ bodyStyle }>  Other Request </span></p>
+                <li className=" listEntry">
+                <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
+                <FontAwesomeIcon className="iconStyle" icon={faCalendar} size="2x" />
+                <span id="task_text" className=" bodyStyle">  Other Request </span></p>
                 </li>
             </ul>
             </div>
             
-            <hr style={ bottomSeparator }></hr>
-            
-            <ul className ="tasks" style= { listStyle }>
-                <li style={ listEntry }>
-                <p title="" data-placement="top" data-toggle="tooltip" style={inlineImg}> 
-                <FontAwesomeIcon style={iconStyle} icon={faUser} size="2x" />
-                <span id="task_text" style={ bodyStyle }> Manage my profile </span></p>
+
+            <div className=" manageProfile">
+            <hr className=" bottomSeparator"></hr>
+        
+            <ul className="listStyle">
+                <li className=" clickableListEntry">
+                <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
+                <FontAwesomeIcon className="iconStyle" icon={faUser} size="2x" />
+                <span id="task_text" className=" bodyStyle"> Manage my profile </span></p>
                 </li>
             </ul>
+            </div>
 
         </div>
     )

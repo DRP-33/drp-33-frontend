@@ -4,6 +4,7 @@ import MapView from '../views/MapView'
 import CreateRequestView from '../views/CreateRequestView';
 import PhonePopup from './PhonePopup';
 import SupplyPopup from './SupplyPopUp';
+import ManageRequestView from '../views/ManageRequestView';
 
 function Router() {
     return (
@@ -20,6 +21,9 @@ function Router() {
                 </Route>
                 <Route path="/supplypopup">
                     <SupplyPopup />
+                </Route>
+                <Route path="/manage-request">
+                    <ManageRequestView />
                 </Route>
                 <Route path="/">
                     <Login />
