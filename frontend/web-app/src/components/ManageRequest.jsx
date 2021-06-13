@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 function ManageRequest() {
     const history = useHistory();
     return (
-        <div>
+        <div className="manageRequestStyle">
             <div className="backToMap" onClick={() => history.push('/map')}>
                 <FontAwesomeIcon className="backToMapStyle" icon={faArrowLeft} size="1x" />
                 <span className="backToMapText"> Back to the map </span>

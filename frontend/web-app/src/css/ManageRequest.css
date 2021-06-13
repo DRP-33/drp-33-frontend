@@ -1,3 +1,9 @@
+.manageRequestStyle {
+    width: 80%;
+    height: 100vh;
+    float:right;
+}
+
 .backToMapStyle {
     color: black;
     position: relative;
