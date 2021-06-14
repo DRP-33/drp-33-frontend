@@ -19,13 +19,13 @@ function SupplyPopup(props) {
     return (
         <div className="popup">
             <div className="popup-inner">
-                <h2 className="headingStyle">Supply Run Request</h2>
+                <h2 className="headerStyle">Supply Run Request</h2>
                 <hr className="hseparator"></hr>
                 <a className="closeBtn" data-placement="top" data-toggle="tooltip" href=""> 
                 <FontAwesomeIcon className="icon" icon={faWindowClose} size="2x" />
                 </a>
-                <div className="container">
-                    <div className="leftContainer">
+                <div className="pcontainer">
+                    <div className="pleftContainer">
                         <h3 className="fieldTitle">First Name</h3>
                         <p className="fieldData">Dennis</p>
                         <h3 className="fieldTitle">Store Location</h3>
@@ -35,7 +35,7 @@ function SupplyPopup(props) {
                         <h3 className="fieldTitle">Additional Details</h3>
                         <p className="fieldData">{props.fields.description}</p>
                     </div>
-                    <div className="rightContainer">
+                    <div className="prightContainer">
                         
                         <div className="btnContainer">
                             <button className="accept-btn" onClick={() => accept()}>Accept Request</button>

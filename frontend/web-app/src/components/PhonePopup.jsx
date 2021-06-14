@@ -10,13 +10,13 @@ function PhonePopup() {
     return (
         <div className="popup">
             <div className="popup-inner">
-                <h2 className="headingStyle">Phone Call Request</h2>
+                <h2 className="headerStyle">Phone Call Request</h2>
                 <hr className="hseparator"></hr>
                 <a className="closeBtn" data-placement="top" data-toggle="tooltip" href=""> 
                 <FontAwesomeIcon className="icon" icon={faWindowClose} size="2x" />
                 </a>
-                <div className="container">
-                    <div className="leftContainer">
+                <div className="pcontainer">
+                    <div className="pleftContainer">
                         <h3 className="fieldTitle">First Name</h3>
                         <p className="fieldData">Steve</p>
                         <h3 className="fieldTitle">Phone Number</h3>
@@ -26,7 +26,7 @@ function PhonePopup() {
                         <h3 className="fieldTitle">Additional Details</h3>
                         <p className="fieldData">please call me, feeling lonely</p>
                     </div>
-                    <div className="rightContainer">
+                    <div className="prightContainer">
                         <div className="btnContainer">
                             <button className="accept-btn">Accept Request</button>
                         </div>
