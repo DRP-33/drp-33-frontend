@@ -30,7 +30,7 @@
     text-decoration: none;
 }
 
-.headingStyle {
+.headerStyle {
     font-family: Saira;
     font-style: normal;
     font-weight: 600;
@@ -48,18 +48,18 @@
     width: 100%;
 }
 
-.container {
+.pcontainer {
     width: 100%;
     display:flex;
     background-color: white;
 }
 
-.leftContainer {
+.pleftContainer {
     width: 60%;
     background-color: white;
 }
 
-.rightContainer {
+.prightContainer {
     position:relative;
     width: 40%;
     background-color: white;
