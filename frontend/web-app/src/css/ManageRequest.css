@@ -2,10 +2,18 @@
     width: 80%;
     height: 100vh;
     float:right;
+    background-color: #565be9;
+    background: -webkit-linear-gradient(top left, #565be9 0%, #56cae9 100%);
+    background: -moz-linear-gradient(top left, #565be9 0%, #56cae9 100%);
+    background: -o-linear-gradient(top left, #565be9 0%, #56cae9 100%);
+    background: linear-gradient(to bottom right, #565be9 0%, #56cae9 100%);
+    border-left-color: #c1c8e4;
+    border-left-width: 3px;
+    border-left-style: solid; 
 }
 
 .backToMapStyle {
-    color: black;
+    color: white;
     position: relative;
     align-items: center;
     margin-right: 10px
@@ -13,7 +21,7 @@
 
 .backToMap {
     position: absolute;
-    color: black;
+    color: white;
     top: 10px;
     right: 10px;
     cursor: pointer
@@ -37,17 +45,18 @@
     display:flex
 }
 
-.leftContainer {
+.leftContainer, .rightContainer {
+    background-color: #1c51d7;
     width: 40%;
-    background-color: #E25353;
+}
+
+.leftContainer {
     margin: 5% 2.5% 5% 7.5%;
     align-items: center;
 
 }
 
 .rightContainer {
-    width: 40%;
-    background-color: #E25353;
     margin: 5% 7.5% 5% 2.5%
 }
 
@@ -63,11 +72,11 @@
     padding: 2%
 }
 .reqBox {
-    background-color: #7E1C1C;
+    background-color: #c1c8e4;
     margin: 2%;
 }
 .iconStyle {
-    color: white;
+    color: black;
     position: relative;
     align-items: center;
     margin: 2%

@@ -4,30 +4,18 @@ import CreatePhoneRequest from '../components/CreatePhoneRequest.jsx'
 import CreateSupplyRunRequest from '../components/CreateSupplyRunRequest.jsx'
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-
+import '../css/CreateRequest.css'
 
 const CreateRequestViewStyle = {
     height: "100vh",
-    width: "100%"
+    width: "100%",
+    
 }
-
-const containerStyle = {
-    width: '80%',
-    height: '100vh',
-    backgroundColor: "#FFFFFF",
-    float: 'right',
-    padding: "5%",
-    display: 'flex',
-    fontFamily: "Saira",
-    fontStyle: "normal",
-    flexDirection: 'column',
-    alignItems: 'center',
-    texAlign: 'center'
-};
 
 const headingStyle = {
     padding: 'auto',
-    marginBottom: '5%'
+    marginBottom: '5%',
+    color: "white"
 }
 
 function CreateRequestView() {
@@ -35,7 +23,7 @@ function CreateRequestView() {
     return (
         <div style={CreateRequestViewStyle}>
             <Sidebar/>
-            <div style={containerStyle}>
+            <div className="containerStyle">
                 <h1 style={headingStyle}>Create new request</h1>
                 <DropdownButton id="dropdown-basic-button" title="Pick a type of request">
                     <Dropdown.Item onClick={() => setId(1)}>Phone Request</Dropdown.Item>

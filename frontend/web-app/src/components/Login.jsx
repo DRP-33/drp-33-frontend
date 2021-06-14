@@ -2,25 +2,30 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useHistory } from "react-router-dom";
-import api from '../api/api'
+import api from '../api/api';
+import '../css/Login.css'
 
-const LoginViewStyle = {
-    height: "100vh",
-    width: "100%",
-    backgroundColor: "#E25353",
-    color: "white",
-    display: "flex"
-}
-
-const FormStyle = {
-    margin: "auto",
-    width: "40%"
+const input = {
+    display: "block",
+    appearance: "none",
+    outline: "0",
+    border: "1px solid fade(white, 40%)",
+    backgroundColor: "fade(white, 20%);",
+    width: "250px",
+    borderRadius: "3px",
+    padding: "10px 15px",
+    margin: "0 auto 10px auto",
+    textAlign: "center",
+    fontSize: "18px",
+    color: "black",
+    fontWeight: "300",
+    
 }
 
 function Login() {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
-    const history = useHistory();
+    const history = useHistory();  
 
     function validateForm() {
         return username.length > 0 && password.length > 0;
@@ -41,21 +46,36 @@ function Login() {
     }
 
     return (
-        <div style={LoginViewStyle}>
-            <Form style={FormStyle} onSubmit={handleSubmit}>
+        <div className="loginViewStyle">
+            <div className="titleContainer">
+                <h1 className="title">Project name </h1>
+            </div>
+            
+            <Form className="lformStyle" onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicUsername">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control type="username" placeholder="Enter username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                    <Form.Control style={input}type="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <Form.Control style={input}type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Group>
-                <Button variant="primary" type="submit" disabled={!validateForm()}>
-                    Submit
+                <Button className="loginbtn" variant="primary" type="submit" disabled={!validateForm()}>
+                    Login
                 </Button>
             </Form>
+            
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     )
 }

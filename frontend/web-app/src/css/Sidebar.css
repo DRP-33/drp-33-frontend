@@ -3,7 +3,7 @@
     width: 20%;
     float: left;
     height: 100vh;
-    background-color: #E25353;
+    background-color: #565be9;
     position: relative;
     padding: 0.5%
 }
@@ -16,7 +16,7 @@
     line-height: 63px;
     align-items: center;
     text-align: center;
-    color: #FFFFFF;
+    color: white;
     margin-top: 7%;
     padding: 2%;
     cursor: pointer;
@@ -35,7 +35,7 @@
     line-height: 25px;
     align-items: center;
     text-align: center;
-    color: #FFFFFF;
+    color: white;
     padding: 2%
 }
 
@@ -62,7 +62,7 @@
     text-decoration: none
 }
 
-.iconStyle  {
+.sIconStyle  {
     color: white;
     position: relative;
     align-items: center;
@@ -71,19 +71,12 @@
     left: 5px
 }
 
-.topSeparator  {
-    color: white;
-    background-color: white;
+.topSeparator, .bottomSeparator {
+    background-color: #c1c8e4;
     margin: 10% 5%;
     height: 3px;
 }
 
-.bottomSeparator  {
-    color: white;
-    background-color: white;
-    margin: 10% 5%; 
-    height: 3px
-}
 
 .manageProfile  {
     position: absolute;

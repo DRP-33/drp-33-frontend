@@ -14,11 +14,11 @@ function Sidebar() {
             <div>
             <ul className="listStyle">
                 <li className=" clickableListEntry" onClick={() => history.push('/create-request')}>
-                    <FontAwesomeIcon className="iconStyle" icon={faPlus} size="2x" />
+                    <FontAwesomeIcon className="sIconStyle" icon={faPlus} size="2x" />
                     <span id="task_text" className="bodyStyle"> Create New Request </span>
                 </li>
                 <li className=" clickableListEntry" onClick={() => history.push('/manage-request')}>
-                    <FontAwesomeIcon className="iconStyle" icon={faTasks} size="2x" />
+                    <FontAwesomeIcon className="sIconStyle" icon={faTasks} size="2x" />
                     <span id="task_text" className=" bodyStyle">  Manage My Requests </span>
                 </li>
             </ul>
@@ -30,17 +30,17 @@ function Sidebar() {
             <ul className="listStyle">
                 <li className="listEntry" >
                 <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
-                <FontAwesomeIcon className="iconStyle" icon={faCalendar} size="2x" />
+                <FontAwesomeIcon className="sIconStyle" icon={faCalendar} size="2x" />
                 <span id="task_text" className=" bodyStyle"> Phone Call </span></p>
                 </li>
                 <li className=" listEntry">
                 <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
-                <FontAwesomeIcon className="iconStyle" icon={faCalendar} size="2x" />
+                <FontAwesomeIcon className="sIconStyle" icon={faCalendar} size="2x" />
                 <span id="task_text" className=" bodyStyle"> Supply Run </span></p>
                 </li>
                 <li className=" listEntry">
                 <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
-                <FontAwesomeIcon className="iconStyle" icon={faCalendar} size="2x" />
+                <FontAwesomeIcon className="sIconStyle" icon={faCalendar} size="2x" />
                 <span id="task_text" className=" bodyStyle">  Other Request </span></p>
                 </li>
             </ul>
@@ -53,7 +53,7 @@ function Sidebar() {
             <ul className="listStyle">
                 <li className=" clickableListEntry">
                 <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
-                <FontAwesomeIcon className="iconStyle" icon={faUser} size="2x" />
+                <FontAwesomeIcon className="sIconStyle" icon={faUser} size="2x" />
                 <span id="task_text" className=" bodyStyle"> Manage my profile </span></p>
                 </li>
             </ul>
