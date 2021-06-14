@@ -22,11 +22,6 @@
     cursor: pointer;
 }
 
-.headingStyle:hover {
-    transform: scale(0.8);
-    transition-duration: 0.2s;
-}
-
 .bodyStyle  {
     font-family: Saira;
     font-style: normal;

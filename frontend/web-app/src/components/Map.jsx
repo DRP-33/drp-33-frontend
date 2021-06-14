@@ -13,6 +13,9 @@ const containerStyle = {
     float: 'right'
 };
 
+const defaultMapOptions = {
+    disableDefaultUI: true,
+};
 
 //center of a map
 const center = {
@@ -69,6 +72,7 @@ function MapComponent() {
                 center = { center }
                 zoom = { 15 }
                 clickableIcons = { false }
+                options = {defaultMapOptions}
             >
             {markers()}
             {renderPopUp()}
