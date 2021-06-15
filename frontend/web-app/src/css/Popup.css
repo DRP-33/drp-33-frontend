@@ -7,7 +7,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .popup-inner {
@@ -16,6 +15,7 @@
     width: 100%;
     max-width: 640px;
     background-color: white;
+    border-radius: 5px;
 }
 
 .popup-inner .icon {
@@ -30,20 +30,22 @@
     text-decoration: none;
 }
 
+
 .headerStyle {
     font-family: Saira;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
-    line-height: 63px;
+    line-height: 50px;
     align-items: left;
     color: black;
-    padding: 1%;
-    
+    padding-bottom: 2%;
+    border-bottom: 1px solid #56cae9;
 }
 
-.hseparator {
-    color: grey;
+.hSeparator {
+    background-color: #56cae9;
+    color: #56cae9;
     height: 3px;
     width: 100%;
 }
@@ -51,19 +53,17 @@
 .pcontainer {
     width: 100%;
     display:flex;
-    background-color: white;
 }
 
 .pleftContainer {
     width: 60%;
-    background-color: white;
+
 }
 
 .prightContainer {
     position:relative;
     width: 40%;
-    background-color: white;
-    border-left: 1px solid lightgray;
+    border-left: 1px solid #56cae9;
 }
 
 .fieldTitle {
@@ -91,8 +91,8 @@
 }
 
 .accept-btn {
-    background-color: #E25353;
-    border: #E25353;
+    background-color: #565be9;
+    border: #565be9;
     padding: 10px 20px;
     border-radius: 10px;
     color: white;
@@ -100,6 +100,12 @@
     position:absolute;
     bottom:2%;
 }
+
+.accept-btn:hover {
+    transform: scale(0.95);
+    transition-duration: 0.2s;
+}
+
 .mapContainer {
     text-align:center;
     background-color: grey;
