@@ -18,7 +18,7 @@ function ManageRequest() {
             <div className="container">
                 <div className="leftContainer">
                     <h1 className="colTitle">Accepted Requests</h1>
-                        <div className="reqBox">
+                        <div className="reqBox" onClick={() => history.push('/map')}>
                             <FontAwesomeIcon className="iconStyle" icon={faCalendar} size="2x" />
                         </div>
                         <div className="reqBox">

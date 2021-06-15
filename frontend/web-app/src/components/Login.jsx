@@ -33,7 +33,9 @@ function Login() {
         formData.append('password', password);
         api.login(formData).then(function(response) {
             //console.log(response.data.token);
-            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('token', response.data.auth_token);
+            localStorage.setItem('streamToken', response.data.stream_token);
+            localStorage.setItem('username', username);
             history.push("/map");
         }).catch((error) => {
             alert("Wrong login credentials! Try again.");   

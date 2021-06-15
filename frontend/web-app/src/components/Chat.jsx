@@ -10,19 +10,26 @@ import { MessageList, MessageInput } from "stream-chat-react";
 import { StreamChat } from "stream-chat";
 
 import "stream-chat-react/dist/css/index.css";
+import "../css/Chat.css"
+
+const chatStyle = {
+  float: "right",
+  width: "50%"
+}
+
 
 class ChatComponent extends Component {
   constructor(props) {
     super(props);
-    this.client = new StreamChat(process.env.REACT_APP_STREAM_API_KEY);
-
-    this.client.setUser(
+    this.client = StreamChat.getInstance(process.env.REACT_APP_STREAM_API_KEY);
+    console.log(process.env.REACT_APP_STREAM_API_KEY);
+    this.client.connectUser(
       {
-        id: "cool-sky-9",
-        name: "Cool Sky",
+        id: localStorage.getItem('username'),
+        username: localStorage.getItem('username'),
         image: "https://getstream.io/random_svg/?id=cool-sky-9&name=Cool+sky"
       },
-      localStorage.getItem("token")
+      localStorage.getItem('streamToken')
     );
 
     this.channel = this.client.channel("messaging", "godevs", {
@@ -34,6 +41,7 @@ class ChatComponent extends Component {
 
   render() {
     return (
+      <div style={chatStyle}>
       <Chat client={this.client} theme={"messaging light"}>
         <Channel channel={this.channel}>
           <Window>
@@ -44,6 +52,7 @@ class ChatComponent extends Component {
           <Thread />
         </Channel>
       </Chat>
+      </div>
     );
   }
 }
