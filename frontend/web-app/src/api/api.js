@@ -29,10 +29,10 @@ const api = {
     login: (data) =>
     instance({
         'method': 'post',
-        'url': '/api-token-auth/',
+        'url': '/auth/token/login/',
         'data': data,
         'headers': {
-            'Content-Type': 'application/json'
+            'Content-Type': 'multipart/form-data'
         }
     }),
     addTask: (data, token) => 

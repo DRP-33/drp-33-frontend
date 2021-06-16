@@ -1,7 +1,9 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Login from './Login';
+import NewLogin from './NewLogin';
 import MapView from '../views/MapView'
 import CreateRequestView from '../views/CreateRequestView';
+import ChatView from '../views/ChatView';
 import PhonePopup from './PhonePopup';
 import SupplyPopup from './SupplyPopUp';
 import ManageRequestView from '../views/ManageRequestView';
@@ -25,10 +27,12 @@ function Router() {
                 <Route path="/manage-request">
                     <ManageRequestView />
                 </Route>
+                <Route path="/chat">
+                    <ChatView />
+                </Route>
                 <Route path="/">
                     <Login />
                 </Route>
-                
             </Switch>
         </BrowserRouter>
     )

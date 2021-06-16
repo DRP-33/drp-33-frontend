@@ -1,0 +1,8 @@
+.str-chat-channel {
+    max-height: 80vh;
+    width: 100%;
+}
+
+.str-chat.messaging, .str-chat.commerce {
+    background-color: transparent;
+}
