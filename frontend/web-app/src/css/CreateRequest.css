@@ -1,0 +1,54 @@
+.formStyle {
+    width: 70%;
+    margin-top: 8%;
+    color: white;
+    text-align: center;
+}
+
+.containerStyle {
+    width: 80%;
+    height: 100vh;
+    background-color: #565be9;
+    background: -webkit-linear-gradient(top left, #565be9 0%, #56cae9 100%);
+    background: -moz-linear-gradient(top left, #565be9 0%, #56cae9 100%);
+    background: -o-linear-gradient(top left, #565be9 0%, #56cae9 100%);
+    background: linear-gradient(to bottom right, #565be9 0%, #56cae9 100%);
+    border-left-color: #c1c8e4;
+    border-left-width: 3px;
+    border-left-style: solid; 
+    float: right;
+    padding: 5%;
+    display: flex;
+    font-family: Saira;
+    font-style: normal;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dropdown-basic-button {
+    background-color: #c1c8e4;
+    border:#c1c8e4;
+    color: #565be9
+}
+
+.bttn {
+    background-color: #565be9 !important;
+    border:#565be9 !important;
+}
+
+.requestTitle {
+    vertical-align: middle;
+    position:relative;
+}
+
+.req {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align: center;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 63px;
+}
