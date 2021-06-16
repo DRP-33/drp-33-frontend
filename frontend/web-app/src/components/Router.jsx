@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Login from './Login';
-import NewLogin from './NewLogin';
+//import NewLogin from './NewLogin';
 import MapView from '../views/MapView'
 import CreateRequestView from '../views/CreateRequestView';
 import ChatView from '../views/ChatView';

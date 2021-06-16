@@ -1,5 +1,5 @@
 import { faUser, faCalendar, faPlusSquare } from '@fortawesome/free-regular-svg-icons';
-import { faPlus, faTasks } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTasks, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import '../fontawesome';
@@ -13,16 +13,20 @@ function Sidebar() {
     const history = useHistory();
     return (
         <div className="sidebarStyle">
-            <h1 className="headingStyle" onClick={() => history.push('/map')}>My tasks</h1>
+            <h1 className="headingStyle">DRP33</h1>
             <div>
-            <ul className="listStyle">
+            <ul className="listStyle">  
+                <li className=" clickableListEntry" onClick={() => history.push('/map')}>
+                    <FontAwesomeIcon className="sIconStyle" icon={faMapMarkedAlt} size="2x" />
+                    <span id="task_text" className="bodyStyle">View Requests on Map </span>
+                </li>
                 <li className=" clickableListEntry" onClick={() => history.push('/create-request')}>
                     <FontAwesomeIcon className="sIconStyle" icon={faPlus} size="2x" />
                     <span id="task_text" className="bodyStyle"> Create New Request </span>
                 </li>
                 <li className=" clickableListEntry" onClick={() => history.push('/manage-request')}>
                     <FontAwesomeIcon className="sIconStyle" icon={faTasks} size="2x" />
-                    <span id="task_text" className=" bodyStyle">  Manage My Requests </span>
+                    <span id="task_text" className=" bodyStyle">Manage My Requests </span>
                 </li>   
             </ul>
             </div>

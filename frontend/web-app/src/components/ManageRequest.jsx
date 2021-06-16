@@ -10,11 +10,6 @@ function ManageRequest() {
     const history = useHistory();
     return (
         <div className="manageRequestStyle">
-            <div className="backToMap" onClick={() => history.push('/map')}>
-                <FontAwesomeIcon className="backToMapStyle" icon={faArrowLeft} size="1x" />
-                <span className="backToMapText"> Back to the map </span>
-            </div>
-
             <div className="container">
                 <div className="leftContainer">
                     <h1 className="colTitle">Accepted Requests</h1>
