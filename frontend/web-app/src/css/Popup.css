@@ -113,3 +113,13 @@
     margin: 2%;
     height: 80%;
 }
+
+.otherNote {
+    font-family: Saira;
+    color: grey;
+    font-size: 12px;
+    margin: 10% 5%;
+
+    text-align:center;
+    
+}
