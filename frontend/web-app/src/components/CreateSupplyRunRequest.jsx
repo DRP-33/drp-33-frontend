@@ -3,15 +3,15 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import api from '../api/api'
 import '../css/CreateRequest.css'
-
+import Autocomplete from "react-google-autocomplete";
 
 const input = {
     display: "block",
     appearance: "none",
     outline: "0",
-    border: "1px solid fade(white, 40%)",
-    backgroundColor: "fade(white, 20%);",
-    width: "400px",
+    border: "1px solid white",
+    backgroundColor: "fade(white, 20%)",
+    width: "450px",
     borderRadius: "3px",
     padding: "10px 15px",
     margin: "0 auto 10px auto",
@@ -26,8 +26,8 @@ const additionalInput = {
     display: "block",
     appearance: "none",
     outline: "0",
-    border: "1px solid fade(white, 40%)",
-    backgroundColor: "fade(white, 20%);",
+    border: "1px solid white",
+    backgroundColor: "fade(white, 20%)",
     width: "500px",
     borderRadius: "3px",
     padding: "10px 15px",
@@ -43,6 +43,10 @@ function CreateRequest() {
     const [storeLocation, setStoreLocation] = React.useState("");
     const [deliveryAddress, setDeliveryAddress] = React.useState("");
     const [details, setDetails] = React.useState("");
+    var options = {
+        types: ['geocode'],
+        componentRestrictions: {country: "uk"}
+       };
 
     function validateForm() {
         return storeLocation.length > 0 && deliveryAddress.length > 0 && details.length > 0;
@@ -65,6 +69,7 @@ function CreateRequest() {
         })
     }
 
+
     return (
         <div className="formStyle">
             <div className="requestTitle">
@@ -73,12 +78,15 @@ function CreateRequest() {
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
                     <Form.Label>Store Location</Form.Label>
-                    <Form.Control style={input} type="text" placeholder="Store location" value={storeLocation} onChange={(e) => setStoreLocation(e.target.value)}/>
+                    {/* <Form.Control style={input} type="text" placeholder="Store location" value={storeLocation} onChange={(e) => setStoreLocation(e.target.value)}/> */}
+                    <Autocomplete style={input} options= {options} placeholder="Store location" apiKey={process.env.REACT_APP_API_KEY} value={storeLocation} onChange={(e) => setStoreLocation(e.target.value)}/>
+                
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Delivery Address</Form.Label>
-                    <Form.Control style={input} type="text" placeholder="Delivery address" value={deliveryAddress} onChange={(e) => setDeliveryAddress(e.target.value)}/>
+                    {/* <Form.Control style={input} type="text" placeholder="Delivery address" value={deliveryAddress} onChange={(e) => setDeliveryAddress(e.target.value)}/> */}
+                    <Autocomplete style={input} options= {options}placeholder="Delivery address" apiKey={process.env.REACT_APP_API_KEY} value={deliveryAddress}  onChange={(e) => setDeliveryAddress(e.target.value)}/>
                 </Form.Group>
                 
                 <Form.Group>

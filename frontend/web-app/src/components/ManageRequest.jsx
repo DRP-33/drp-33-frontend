@@ -1,4 +1,4 @@
-import { faArrowLeft, faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontawesome';
 import '../css/ManageRequest.css'

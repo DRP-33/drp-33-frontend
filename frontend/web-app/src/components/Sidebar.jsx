@@ -1,4 +1,4 @@
-import { faUser, faCalendar, faPlusSquare } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faPlus, faTasks, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -37,17 +37,17 @@ function Sidebar() {
             <ul className="listStyle">
                 <li className="listEntry" >
                 <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
-                <img src={PhoneMarker}/>
+                <img src={PhoneMarker} alt="phone_marker"/>
                 <span id="task_text" className=" bodyStyle"> Phone Call </span></p>
                 </li>
                 <li className=" listEntry">
                 <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
-                <img src={ShopMarker}/>
+                <img src={ShopMarker} alt="shop_marker"/>
                 <span id="task_text" className=" bodyStyle"> Supply Run </span></p>
                 </li>
                 <li className=" listEntry">
                 <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
-                <img src={MiscMarker}/>                
+                <img src={MiscMarker} alt="misc_marker"/>                
                 <span id="task_text" className=" bodyStyle">  Other Request </span></p>
                 </li>
             </ul>
