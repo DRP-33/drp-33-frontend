@@ -82,6 +82,16 @@ const api = {
             'Content-Type': 'application/json',
             'Authorization': 'Token ' + token
         }
+    }),
+    getUser: (data, token) =>
+    instance({
+        'method': 'post',
+        'url': '/user/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
     })
 }
 

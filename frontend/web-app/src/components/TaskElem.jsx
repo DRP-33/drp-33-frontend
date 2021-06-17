@@ -41,7 +41,7 @@ function TaskElem(props) {
         <div style={box} onClick={() => handleClick()}>
             {props.fields.t_type === 'PC' && <img style={marker} alt='' src={PhoneMarker}/>}
             {props.fields.t_type === 'SP' && <img style={marker} alt='' src={ShopMarker}/>}
-            {props.fields.t_type === 'OT' && <img style={marker} alt='' src={MiscMarker}/>}
+            {props.fields.t_type !== 'PC' && props.fields.t_type !== 'SP' && <img style={marker} alt='' src={MiscMarker}/>}
             <span style={text}>{props.fields.description}</span>
         </div>
     )

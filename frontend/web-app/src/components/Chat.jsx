@@ -19,7 +19,7 @@ class ChatComponent extends Component {
     this.client = StreamChat.getInstance(process.env.REACT_APP_STREAM_API_KEY);
     const task = localStorage.getItem('task');
 
-    console.log(task);
+    //console.log(task);
     this.client.connectUser(
       {
         id: localStorage.getItem('username'),

@@ -30,7 +30,6 @@ function ManageRequest() {
 
     function accpetedRequests() {
         var requests = [];
-        console.log(acceptedTasks);
         for(var i = 0; i < acceptedLen; i++) {
             requests.push(TaskElem(acceptedTasks[i]))
         }
@@ -39,7 +38,6 @@ function ManageRequest() {
 
     function myRequests() {
         var requests = [];
-        console.log(myTasks);
         for(var i = 0; i < myLen; i++) {
             requests.push(TaskElem(myTasks[i]))
         }
