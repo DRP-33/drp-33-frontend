@@ -1,5 +1,5 @@
-import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faPlus, faTasks, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { faQuestionCircle, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faPlus, faTasks, faMapMarkedAlt, faQuestion, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import '../fontawesome';
@@ -8,9 +8,19 @@ import '../css/Sidebar.css'
 import PhoneMarker from '../assets/phonemarker.png';
 import ShopMarker from '../assets/shopmarker.png';
 import MiscMarker from '../assets/miscmarker.png';
+import InfoPopup from './InfoPopup';
 
 function Sidebar() {
     const history = useHistory();
+    let [buttonPopUp, setButtonPopUp] = React.useState(false);
+
+    function renderPopUp() {
+        return (
+                 <InfoPopup trigger={buttonPopUp} setTrigger={setButtonPopUp}/>
+                 
+        )
+    }
+
     return (
         <div className="sidebarStyle">
             <h1 className="headingStyle">DRP33</h1>
@@ -34,7 +44,7 @@ function Sidebar() {
             <hr className=" topSeparator"></hr>
 
             <div> 
-            <ul className="listStyle">
+                <ul className="listStyle">
                 <li className="listEntry" >
                 <p title="" data-placement="top" data-toggle="tooltip" className="inlineImg"> 
                 <img src={PhoneMarker} alt="phone_marker"/>
@@ -50,7 +60,13 @@ function Sidebar() {
                 <img src={MiscMarker} alt="misc_marker"/>                
                 <span id="task_text" className=" bodyStyle">  Other Request </span></p>
                 </li>
-            </ul>
+                </ul>
+
+                <div className="infopopup" onClick = {() => setButtonPopUp(true)}>
+                    <span className="bodyStyle">More Info</span>
+                    <FontAwesomeIcon className="sIconStyle" icon={faQuestionCircle} size="2x" /> 
+                </div>
+                {renderPopUp()}
             </div>
             
 
@@ -65,6 +81,7 @@ function Sidebar() {
                 </li>
             </ul>
             </div>
+            
 
         </div>
     )

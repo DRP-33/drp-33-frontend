@@ -9,6 +9,7 @@ import SupplyPopup from './SupplyPopUp';
 import OtherPopup from './OtherPopup';
 import ManageRequestView from '../views/ManageRequestView';
 import Signup from './Signup'
+import InfoPopup from './InfoPopup'
 
 function Router() {
     return (
@@ -25,6 +26,9 @@ function Router() {
                 </Route>
                 <Route path="/phonepopup">
                     <PhonePopup />
+                </Route>
+                <Route path="/infopopup">
+                    <InfoPopup />
                 </Route>
                 <Route path="/supplypopup">
                     <SupplyPopup />

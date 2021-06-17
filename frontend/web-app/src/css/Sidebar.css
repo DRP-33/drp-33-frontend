@@ -64,6 +64,13 @@
     left: 5px
 }
 
+
+.infopopup:hover {
+    color:lightgray;
+    transform: scale(0.95);
+    transition-duration: 0.2s;
+}
+
 .topSeparator,
 .bottomSeparator {
     background-color: #c1c8e4;
@@ -75,4 +82,10 @@
     position: absolute;
     bottom: 2%;
     width: 95%
+}
+
+.infopopup {
+    display:flex;
+    justify-content:center;
+    cursor: pointer;
 }
