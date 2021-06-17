@@ -64,6 +64,10 @@ function Login() {
                 <Button className="loginbtn" variant="primary" type="submit" disabled={!validateForm()}>
                     Login
                 </Button>
+            
+                <h1 className="signup"> New User? </h1>
+                <a className="signupLink" onClick={() => history.push('/signup')}>Sign Up</a>
+    
             </Form>
             
             <ul class="bg-bubbles">

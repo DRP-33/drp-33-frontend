@@ -50,6 +50,30 @@ html, body {
     width: 100px !important;
 }
 
+.signup {
+    text-align: center;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 2%;
+}
+
+.signupLink {
+    text-decoration: underline white solid;
+    color: white;
+    text-align: center;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.signupLink:hover {
+    color:#565be9;
+}
+
 .bg-bubbles {
     position: absolute;
     top: 0;

@@ -8,11 +8,15 @@ import PhonePopup from './PhonePopup';
 import SupplyPopup from './SupplyPopUp';
 import OtherPopup from './OtherPopup';
 import ManageRequestView from '../views/ManageRequestView';
+import Signup from './Signup'
 
 function Router() {
     return (
         <BrowserRouter>
             <Switch>
+                <Route path="/signup">
+                    <Signup />
+                </Route>
                 <Route path="/map">
                     <MapView />
                 </Route>

@@ -35,6 +35,15 @@ const api = {
             'Content-Type': 'multipart/form-data'
         }
     }),
+    signup: (data) =>
+    instance({
+        'method': 'post',
+        'url': '/user_c/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'multipart/form-data'
+        }
+    }),
     addTask: (data, token) => 
     instance({
         'method': 'post',
