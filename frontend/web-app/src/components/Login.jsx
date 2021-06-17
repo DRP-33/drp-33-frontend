@@ -50,7 +50,7 @@ function Login() {
     return (
         <div className="loginViewStyle">
             <div className="titleContainer">
-                <h1 className="title">Project name </h1>
+                <h1 className="title">DRP33 </h1>
             </div>
             
             <Form className="lformStyle" onSubmit={handleSubmit}>
