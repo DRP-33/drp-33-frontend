@@ -18,7 +18,7 @@ const transform = {
 }
 
 function InfoPopup(props) {
-    console.log(props)
+    //console.log(props)
     return (props.trigger) ? (
         <div className="popup">
             <div style={transform} className="popup-inner">

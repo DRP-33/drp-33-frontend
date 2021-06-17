@@ -7,7 +7,7 @@ import api from '../api/api';
 
 
 function OtherPopup(props) {
-    console.log(props);
+    //console.log(props);
 
     function accept() {
         var formData = new FormData();
