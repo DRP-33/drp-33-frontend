@@ -27,8 +27,9 @@
 }
 
 .closeBtn {
-    text-decoration: none;
+    cursor: pointer;
 }
+
 
 
 .headerStyle {

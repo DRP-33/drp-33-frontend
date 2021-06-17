@@ -11,28 +11,29 @@ function SupplyPopup(props) {
 
     function accept() {
         var formData = new FormData();
-        formData.append('task_id', props.task_id);
+        formData.append('task_id', props.props.task_id);
         formData.append('acceptor_id', '1');
         api.acceptTask(formData, localStorage.getItem('token'));
     }
 
-    return (
+ 
+    return (props.trigger) ? (
         <div className="popup">
             <div className="popup-inner">
                 <h2 className="headerStyle">Supply Run Request</h2>
-                <a className="closeBtn" data-placement="top" data-toggle="tooltip" href=""> 
-                <FontAwesomeIcon className="icon" icon={faWindowClose} size="2x" />
-                </a>
+                <span className="closeBtn" onClick={() => props.setTrigger(false)}> 
+                    <FontAwesomeIcon className="icon" icon={faWindowClose} size="2x" />
+                </span>
                 <div className="pcontainer">
                     <div className="pleftContainer">
                         <h3 className="fieldTitle">First Name</h3>
                         <p className="fieldData">Dennis</p>
                         <h3 className="fieldTitle">Store Location</h3>
-                        <p className="fieldData">{props.fields.store_addr}</p>
+                        <p className="fieldData">{props.props.fields.store_addr}</p>
                         <h3 className="fieldTitle">Delivery Address</h3>
-                        <p className="fieldData">{props.fields.delivery_addr}</p>
+                        <p className="fieldData">{props.props.fields.delivery_addr}</p>
                         <h3 className="fieldTitle">Additional Details</h3>
-                        <p className="fieldData">{props.fields.description}</p>
+                        <p className="fieldData">{props.props.fields.description}</p>
                     </div>
                     <div className="prightContainer">
                         
@@ -44,7 +45,7 @@ function SupplyPopup(props) {
                 </div>
         </div>
         </div>
-    )
+    ) : "";
 }
 
 export default SupplyPopup

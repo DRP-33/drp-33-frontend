@@ -4,6 +4,8 @@ import api from '../api/api';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import PhonePopup from './PhonePopup.jsx';
 import SupplyPopUp from './SupplyPopUp.jsx';
+import OtherPopup from './OtherPopup.jsx';
+
 
 
 // container style
@@ -29,6 +31,7 @@ function MapComponent() {
     let [len, setLen] = React.useState(0);
     let [popUpData, setPopUpData] = React.useState([]);
     let [popUp, setPopUp] = React.useState(0);
+    let [buttonPopUp, setButtonPopUp] = React.useState(false);
 
     React.useEffect(() => {
         //console.log('Token ' + localStorage.getItem('token'));
@@ -48,11 +51,15 @@ function MapComponent() {
     }
 
     const showPopUp = (data) => {
+        console.log(data);
         setPopUpData(data);
-        if(data.fields.task_type === 'PR') {
+        setButtonPopUp(true);
+        if(data.fields.t_type === 'PR') {
             setPopUp(1);
-        } else {
+        } else if (data.fields.t_type === 'SP') {
             setPopUp(2);
+        } else {
+            setPopUp(3);
         }
     }
 
@@ -60,7 +67,9 @@ function MapComponent() {
         if(popUp === 1) {
             return PhonePopup(popUpData);
         } else if(popUp === 2)  {
-            return SupplyPopUp(popUpData);
+            return <SupplyPopUp props={popUpData} trigger={buttonPopUp} setTrigger={setButtonPopUp}/>
+        } else {
+            return <OtherPopup props={popUpData} trigger={buttonPopUp} setTrigger={setButtonPopUp}/>
         }
     }
 

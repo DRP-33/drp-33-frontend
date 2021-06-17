@@ -7,7 +7,7 @@ function Pin(props) {
     var position = {lat: parseFloat(props.fields.s_latitude), lng: parseFloat(props.fields.s_longitude)};
     var key = props.key;
     var data = { fields: props.fields, task_id: key };
-    var type = props.fields.task_type;
+    var type = props.fields.t_type;
     if (type === 'PC') {
         var icon = PhoneMarker
     } else if (type === 'SP') {

@@ -11,26 +11,26 @@ function OtherPopup(props) {
 
     function accept() {
         var formData = new FormData();
-        formData.append('task_id', props.task_id);
+        formData.append('task_id', props.props.task_id);
         formData.append('acceptor_id', '1');
         api.acceptTask(formData, localStorage.getItem('token'));
     }
 
-    return (
+    return (props.trigger) ? (
         <div className="popup">
             <div className="popup-inner">
                 <h2 className="headerStyle">Other Request</h2>
-                <a className="closeBtn" data-placement="top" data-toggle="tooltip" href=""> 
-                <FontAwesomeIcon className="icon" icon={faWindowClose} size="2x" />
-                </a>
+                <span className="closeBtn" onClick={() => props.setTrigger(false)}> 
+                    <FontAwesomeIcon className="icon" icon={faWindowClose} size="2x" />
+                </span>
                 <div className="pcontainer">
                     <div className="pleftContainer">
                         <h3 className="fieldTitle">First Name</h3>
                         <p className="fieldData">Dennis</p>
                         <h3 className="fieldTitle">Request Title</h3>
-                        <p className="fieldData">req</p>
+                        <p className="fieldData">{props.props.fields.title}</p>
                         <h3 className="fieldTitle">Additional Details</h3>
-                        <p className="fieldData">desc</p>
+                        <p className="fieldData">{props.props.fields.description}</p>
                     </div>
                     <div className="prightContainer">
                         <p className="otherNote">Note: "Other" requests can vary widely and may not be reasonable. Please make sure to read "Additional details" in full.</p>
@@ -42,7 +42,7 @@ function OtherPopup(props) {
                 </div>
         </div>
         </div>
-    )
+    ) : "";
 }
 
 export default OtherPopup
