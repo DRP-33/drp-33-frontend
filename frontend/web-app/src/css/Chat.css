@@ -6,3 +6,48 @@
 .str-chat.messaging, .str-chat.commerce {
     background-color: transparent;
 }
+
+.containerChatStyle  {
+    width: 80%;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #565be9 0%, #56cae9 100%);
+    float: right;
+    padding: 5%;
+    display: flex;
+    font-family: Saira;
+    font-style: normal;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.button  {
+    width: 90%;
+    margin-left: 5%;
+    background-color: #565be9;
+    border: #565be9;
+    padding: 2.5% 8%;
+    border-radius: 10px;
+    color: white;
+    font-family: Saira;
+    font-size: 200%;
+    margin-bottom: 5%;
+}
+
+.grey {
+    background-color: lightgrey;
+    border: lightgrey;
+    cursor: normal;
+}
+
+.rightContainerStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: "center";
+    align-items: "center";
+    width: 50%;
+}
+
+.chatStyle {
+    width: 50%;
+}

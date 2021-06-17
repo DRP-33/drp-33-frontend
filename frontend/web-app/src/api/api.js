@@ -16,6 +16,16 @@ const api = {
             'Authorization': 'Token ' + token
         }
     }),
+    getOneTask: (data, token) =>
+    instance({
+        'method':'post',
+        'url': '/task/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
+    }),
     acceptTask: (data, token) =>
     instance({
         'method': 'post',
@@ -48,6 +58,44 @@ const api = {
     instance({
         'method': 'post',
         'url': '/task_c/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
+    }),
+    myTasks: (token) => 
+    instance({
+        'method': 'get',
+        'url': '/my_tasks/',
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
+    }),
+    acceptedTasks: (token) => 
+    instance({
+        'method': 'get',
+        'url': '/accepted_tasks/',
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
+    }),
+    cancelTask: (data, token) =>
+    instance({
+        'method': 'post',
+        'url': '/task/cancel/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
+    }),
+    getUser: (data, token) =>
+    instance({
+        'method': 'post',
+        'url': '/user/',
         'data': data,
         'headers': {
             'Content-Type': 'application/json',

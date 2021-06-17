@@ -8,13 +8,15 @@ function Pin(props) {
     var key = props.key;
     var data = { fields: props.fields, task_id: key };
     var type = props.fields.t_type;
+    var icon = "";
     if (type === 'PC') {
-        var icon = PhoneMarker
+        icon = PhoneMarker
     } else if (type === 'SP') {
         icon = ShopMarker
     } else {
         icon = MiscMarker
     }
+    //console.log(props);
     return (
         <Marker 
             key = {key} 

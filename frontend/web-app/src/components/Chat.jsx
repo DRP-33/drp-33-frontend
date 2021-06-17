@@ -12,17 +12,14 @@ import { StreamChat } from "stream-chat";
 import "stream-chat-react/dist/css/index.css";
 import "../css/Chat.css"
 
-const chatStyle = {
-  float: "right",
-  width: "50%"
-}
-
 
 class ChatComponent extends Component {
   constructor(props) {
     super(props);
     this.client = StreamChat.getInstance(process.env.REACT_APP_STREAM_API_KEY);
-    console.log(process.env.REACT_APP_STREAM_API_KEY);
+    const task = localStorage.getItem('task');
+
+    //console.log(task);
     this.client.connectUser(
       {
         id: localStorage.getItem('username'),
@@ -32,26 +29,24 @@ class ChatComponent extends Component {
       localStorage.getItem('streamToken')
     );
 
-    this.channel = this.client.channel("messaging", "godevs", {
-      image:
-        "https://cdn.chrisshort.net/testing-certificate-chains-in-go/GOPHER_MIC_DROP.png",
-      name: "Talk about Go"
+    this.channel = this.client.channel("messaging", props.id, {
+      name: task
     });
   }
 
   render() {
     return (
-      <div style={chatStyle}>
-      <Chat client={this.client} theme={"messaging light"}>
-        <Channel channel={this.channel}>
-          <Window>
-            <ChannelHeader />
-            <MessageList />
-            <MessageInput />
-          </Window>
-          <Thread />
-        </Channel>
-      </Chat>
+      <div>
+        <Chat client={this.client} theme={"messaging light"}>
+          <Channel channel={this.channel}>
+            <Window>
+              <ChannelHeader />
+              <MessageList />
+              <MessageInput />
+            </Window>
+            <Thread />
+          </Channel>
+        </Chat>
       </div>
     );
   }

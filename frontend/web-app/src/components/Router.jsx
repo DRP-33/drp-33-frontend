@@ -39,7 +39,7 @@ function Router() {
                 <Route path="/manage-request">
                     <ManageRequestView />
                 </Route>
-                <Route path="/chat">
+                <Route path="/task/:id">
                     <ChatView />
                 </Route>
                 <Route path="/">

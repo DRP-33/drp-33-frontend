@@ -32,10 +32,15 @@ function MapComponent() {
     let [popUpData, setPopUpData] = React.useState([]);
     let [popUp, setPopUp] = React.useState(0);
     let [buttonPopUp, setButtonPopUp] = React.useState(false);
+    let [myTasks, setMyTasks] = React.useState([]);
 
     React.useEffect(() => {
         //console.log('Token ' + localStorage.getItem('token'));
         api.getTask(localStorage.getItem('token')).then(function (response){
+            setMyTasks(response.data);
+        });
+
+        api.myTasks(localStorage.getItem('token')).then(function (response){
             setData(response.data);
             setLen(response.data.length);
         });
@@ -45,7 +50,9 @@ function MapComponent() {
         var marker = [];
         //console.log(len);
         for(var i = 0; i < len; i++) {
-            marker.push(Pin({fields: data[i].fields, key: data[i].pk, func: {showPopUp}}));
+            if (!myTasks.includes(data[i])) {
+                marker.push(Pin({fields: data[i].fields, key: data[i].pk, func: {showPopUp}}));
+            }
         }
         return marker;
     }
