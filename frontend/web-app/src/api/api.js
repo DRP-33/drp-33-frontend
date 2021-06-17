@@ -44,6 +44,34 @@ const api = {
             'Content-Type': 'application/json',
             'Authorization': 'Token ' + token
         }
+    }),
+    myTasks: (token) => 
+    instance({
+        'method': 'get',
+        'url': '/my_tasks/',
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
+    }),
+    acceptedTasks: (token) => 
+    instance({
+        'method': 'get',
+        'url': '/accepted_tasks/',
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
+    }),
+    cancelTask: (data, token) =>
+    instance({
+        'method': 'post',
+        'url': '/task/cancel/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
     })
 }
 
