@@ -43,9 +43,10 @@ function CreateRequest() {
     const [storeLocation, setStoreLocation] = React.useState("");
     const [deliveryAddress, setDeliveryAddress] = React.useState("");
     const [details, setDetails] = React.useState("");
+    const [title, setTitle] = React.useState("");
 
     function validateForm() {
-        return storeLocation.length > 0 && deliveryAddress.length > 0 && details.length > 0;
+        return storeLocation.length > 0 && deliveryAddress.length > 0 && details.length > 0 && title.length > 0;
     }
 
     function handleSubmit(event) {
@@ -53,6 +54,7 @@ function CreateRequest() {
         var formData = new FormData();
         //console.log(fromGivenAddress(storeLocation));
         formData.append('description',details);
+        formData.append('title', title);
         formData.append('date', new Date().toJSON());
         formData.append('task_type', "SP");
         formData.append('s_longitude', /*fromGivenAddress(storeLocation).lng*/ -0.2620758943035952);
@@ -71,6 +73,11 @@ function CreateRequest() {
                 <h1 className="req">Supply Run Request </h1>
             </div>
             <Form onSubmit={handleSubmit}>
+                <Form.Group>
+                    <Form.Label>Request Title</Form.Label>
+                    <Form.Control style={input} type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                </Form.Group>
+
                 <Form.Group>
                     <Form.Label>Store Location</Form.Label>
                     <Form.Control style={input} type="text" placeholder="Store location" value={storeLocation} onChange={(e) => setStoreLocation(e.target.value)}/>

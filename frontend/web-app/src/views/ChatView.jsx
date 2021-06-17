@@ -13,10 +13,23 @@ const CreateRequestViewStyle = {
 function ChatView() {
     const {id} = useParams();
     const history = useHistory();
+    const [task, setTask] = React.useState(0);
+    var formData = new FormData();
+    
+    
+    React.useEffect(() => {
+        formData.append('task_id', id); 
+        api.getOneTask(formData, localStorage.getItem('token')).then(function(response) {
+            setTask(response.data);
+        }).catch((error) => {
+            alert("Something went wrong");   
+        });
+    }, []);
+    
+    console.log(task);
 
     function cancel(id) {
-        var formData = new FormData();
-        formData.append('task_id', id);
+        formData.append('task_id', id); 
         api.cancelTask(formData, localStorage.getItem('token')).then(function(response) {
             history.push("/map");
         }).catch((error) => {

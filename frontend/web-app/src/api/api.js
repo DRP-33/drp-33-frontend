@@ -16,6 +16,16 @@ const api = {
             'Authorization': 'Token ' + token
         }
     }),
+    getOneTask: (data, token) =>
+    instance({
+        'method':'post',
+        'url': '/task/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
+    }),
     acceptTask: (data, token) =>
     instance({
         'method': 'post',

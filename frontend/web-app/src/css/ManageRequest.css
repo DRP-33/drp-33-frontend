@@ -1,6 +1,6 @@
 .manageRequestStyle {
     width: 80%;
-    height: 100vh;
+    min-height: 100vh;
     float:right;
     background-color: #565be9;
     background: -webkit-linear-gradient(top left, #565be9 0%, #56cae9 100%);
