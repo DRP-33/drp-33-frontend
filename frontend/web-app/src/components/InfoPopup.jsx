@@ -11,16 +11,11 @@ const infoStyle = {
     textAlign: "center"
 }
 
-const transform = {
-    transform: "translate(25vw, 0)",
-    minWidth: "640px"
-}
-
 function InfoPopup(props) {
     //console.log(props)
     return (props.trigger) ? (
         <div className="popup">
-            <div style={transform} className="popup-inner">
+            <div className="popup-inner">
                 <h2 style={infoStyle} className="headerStyle"> Requests Information </h2>
                 <span className="closeBtn" onClick={() => props.setTrigger(false)}>
                     <FontAwesomeIcon className="icon" icon={faWindowClose} size="2x" />

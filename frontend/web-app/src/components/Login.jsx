@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 import Form from 'react-bootstrap/Form';
 import { useHistory } from "react-router-dom";
 import api from '../api/api';
@@ -26,6 +27,7 @@ const input = {
 function Login() {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [logginIn, setLogginIn] = React.useState(false);
     const history = useHistory();  
 
     function validateForm() {
@@ -33,6 +35,7 @@ function Login() {
     }
 
     function handleSubmit(event) {
+        setLogginIn(true);
         event.preventDefault();
         var formData = new FormData();
         formData.append('username', username);
@@ -78,7 +81,8 @@ function Login() {
             
                 <h1 className="signup"> New User? </h1>
                 <span className="signupLink" onClick={() => history.push('/signup')}>Sign Up</span>
-    
+
+                {logginIn ? <Spinner animation="border" variant="light"/> : ""}
             </Form>
             
             <ul class="bg-bubbles">

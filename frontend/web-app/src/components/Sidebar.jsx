@@ -12,14 +12,8 @@ import InfoPopup from './InfoPopup';
 
 function Sidebar() {
     const history = useHistory();
-    let [buttonPopUp, setButtonPopUp] = React.useState(false);
 
-    function renderPopUp() {
-        return (
-                 <InfoPopup trigger={buttonPopUp} setTrigger={setButtonPopUp}/>
-                 
-        )
-    }
+    
 
     return (
         <div className="sidebarStyle">
@@ -61,12 +55,6 @@ function Sidebar() {
                 <span id="task_text" className=" bodyStyle">  Other Request </span></p>
                 </li>
                 </ul>
-
-                <div className="infopopup" onClick = {() => setButtonPopUp(true)}>
-                    <span className="bodyStyle">More Info</span>
-                    <FontAwesomeIcon className="sIconStyle" icon={faQuestionCircle} size="2x" /> 
-                </div>
-                {renderPopUp()}
             </div>
             
 

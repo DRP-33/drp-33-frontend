@@ -5,8 +5,9 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import PhonePopup from './PhonePopup.jsx';
 import SupplyPopUp from './SupplyPopUp.jsx';
 import OtherPopup from './OtherPopup.jsx';
-
-
+import InfoPopup from './InfoPopup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle} from '@fortawesome/free-regular-svg-icons';
 
 // container style
 const containerStyle = {
@@ -33,6 +34,7 @@ function MapComponent() {
     let [popUp, setPopUp] = React.useState(0);
     let [buttonPopUp, setButtonPopUp] = React.useState(false);
     let [myTasks, setMyTasks] = React.useState([]);
+    let [infoPopUp, setInfoPopUp] = React.useState(false);
 
     React.useEffect(() => {
         //console.log('Token ' + localStorage.getItem('token'));
@@ -48,7 +50,6 @@ function MapComponent() {
 
     function markers() {
         var marker = [];
-        console.log(myTasks);
         for(var i = 0; i < len; i++) {
             var notMine = true;
             for(var j = 0; j < myTasks.length; j++) {
@@ -86,6 +87,12 @@ function MapComponent() {
         }
     }
 
+    function renderInfoPopUp() {
+        return (
+            <InfoPopup trigger={infoPopUp} setTrigger={setInfoPopUp}/>
+        )
+    }
+
     return (
         <LoadScript googleMapsApiKey = {process.env.REACT_APP_API_KEY} >
             <GoogleMap
@@ -98,8 +105,12 @@ function MapComponent() {
             >
             {markers()}
             {renderPopUp()}
+            {renderInfoPopUp()}
             </GoogleMap>
-            </LoadScript>
+            <div className="buttonBottomRight" onClick = {() => setInfoPopUp(true)}>
+                <FontAwesomeIcon icon={faQuestionCircle} size="2x" /> 
+            </div>
+        </LoadScript>
     )
 }
 
