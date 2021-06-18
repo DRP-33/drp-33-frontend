@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import api from '../api/api'
 import '../css/CreateRequest.css'
 import { store } from 'react-notifications-component';
+import { useHistory } from 'react-router-dom';
 
 const input = {
     display: "block",
@@ -43,7 +44,8 @@ function CreateRequest() {
     const [phonenumber, setPhonenumber] = React.useState("");
     const [availableHours, setAvailablehours] = React.useState("");
     const [details, setDetails] = React.useState("");
-
+    const history = useHistory();
+    
     function validateForm() {
         return phonenumber.length > 0 && availableHours.length > 0 && details.length > 0;
     }
@@ -67,6 +69,7 @@ function CreateRequest() {
                   onScreen: true
                 }
             });
+            history.push('/manage-request/');
         })
     }
 

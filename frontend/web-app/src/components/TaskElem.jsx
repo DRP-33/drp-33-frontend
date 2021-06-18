@@ -31,7 +31,7 @@ function TaskElem(props) {
     const history = useHistory();
 
     function handleClick() {
-        localStorage.setItem('task', props.fields.description);
+        localStorage.setItem('task', props.fields.title);
         history.push('/task/' + props.pk);
     }
 
@@ -40,7 +40,7 @@ function TaskElem(props) {
             {props.fields.t_type === 'PC' && <img style={marker} alt='' src={PhoneMarker}/>}
             {props.fields.t_type === 'SP' && <img style={marker} alt='' src={ShopMarker}/>}
             {props.fields.t_type !== 'PC' && props.fields.t_type !== 'SP' && <img style={marker} alt='' src={MiscMarker}/>}
-            <span style={text}>{props.fields.description}</span>
+            <span style={text}>{props.fields.title}, {props.fields.acceptor_id == null ? <span>Not accepted</span> : <span>Accepted!</span>}</span>
         </div>
     )
 }

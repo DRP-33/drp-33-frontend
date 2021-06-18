@@ -6,6 +6,7 @@ import '../css/CreateRequest.css'
 import Autocomplete from "react-google-autocomplete";
 import { store } from 'react-notifications-component';
 import fromGivenAddress from "../api/geocode";
+import { useHistory } from 'react-router-dom';
 
 const input = {
     display: "block",
@@ -46,7 +47,8 @@ function CreateRequest() {
     let [details, setDetails] = React.useState("");
     let [locationComputed, setLocationComputed] = React.useState(null);
     let [title, setTitle] = React.useState("");
-
+    const history = useHistory();
+    
     var options = {
         types: ['geocode'],
         componentRestrictions: {country: "uk"}
@@ -86,6 +88,7 @@ function CreateRequest() {
                   onScreen: true
                 }
             });
+            history.push('/manage-request/');
         })
     }, [locationComputed]);
 
