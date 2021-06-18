@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from '../components/Sidebar.jsx'
 import CreatePhoneRequest from '../components/CreatePhoneRequest.jsx'
 import CreateSupplyRunRequest from '../components/CreateSupplyRunRequest.jsx'
+import CreateOtherRequest from '../components/CreateOtherRequest.jsx'
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import '../css/CreateRequest.css'
@@ -28,9 +29,11 @@ function CreateRequestView() {
                 <DropdownButton id="dropdown-basic-button" title="Pick a type of request">
                     <Dropdown.Item onClick={() => setId(1)}>Phone Request</Dropdown.Item>
                     <Dropdown.Item onClick={() => setId(2)}>Supply Run Request</Dropdown.Item>
+                    <Dropdown.Item onClick={() => setId(3)}>Other Request</Dropdown.Item>
                 </DropdownButton>
                 {id === 1 && <CreatePhoneRequest/>}
                 {id === 2 && <CreateSupplyRunRequest/>}
+                {id === 3 && <CreateOtherRequest/>}
             </div>
         </div>
     )
