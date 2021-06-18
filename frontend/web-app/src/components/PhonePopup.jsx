@@ -11,9 +11,9 @@ function PhonePopup() {
         <div className="popup">
             <div className="popup-inner">
                 <h2 className="headerStyle">Phone Call Request</h2>
-                <a className="closeBtn" data-placement="top" data-toggle="tooltip" href=""> 
+                <span className="closeBtn" data-placement="top" data-toggle="tooltip" href=""> 
                 <FontAwesomeIcon className="icon" icon={faWindowClose} size="2x" />
-                </a>
+                </span>
                 <div className="pcontainer">
                     <div className="pleftContainer">
                         <h3 className="fieldTitle">First Name</h3>

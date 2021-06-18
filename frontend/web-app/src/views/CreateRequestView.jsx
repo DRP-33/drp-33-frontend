@@ -14,7 +14,7 @@ const CreateRequestViewStyle = {
 
 const headingStyle = {
     padding: 'auto',
-    marginBottom: '5%',
+    marginBottom: '3%',
     color: "white"
 }
 

@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import api from '../api/api'
 import '../css/CreateRequest.css'
 import Autocomplete from "react-google-autocomplete";
+import { store } from 'react-notifications-component';
+import fromGivenAddress from "../api/geocode";
 
 const input = {
     display: "block",
@@ -40,37 +42,60 @@ const additionalInput = {
 }
 
 function CreateRequest() {
-    const [storeLocation, setStoreLocation] = React.useState("");
-    const [deliveryAddress, setDeliveryAddress] = React.useState("");
-    const [details, setDetails] = React.useState("");
+    let [storeLocation, setStoreLocation] = React.useState("");
+    let [deliveryAddress, setDeliveryAddress] = React.useState("");
+    let [details, setDetails] = React.useState("");
+    let [storeComputed, setStoreComputed] = React.useState(null);
+    let [deliveryComputed, setDeliveryComputed] = React.useState(null);
+    let [title, setTitle] = React.useState("");
+
     var options = {
         types: ['geocode'],
         componentRestrictions: {country: "uk"}
        };
-    const [title, setTitle] = React.useState("");
 
     function validateForm() {
         return storeLocation.length > 0 && deliveryAddress.length > 0 && details.length > 0 && title.length > 0;
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
+        var storeAddress = await fromGivenAddress(storeLocation).then(function(response) {
+            return response;
+        });
+        var delAddress = await fromGivenAddress(deliveryAddress).then(function(response) {
+            return response;
+        });
+        setStoreComputed(storeAddress);
+        setDeliveryComputed(delAddress);
+    }
+
+    React.useEffect(() => {
+        if(storeComputed == null || deliveryComputed == null) return;
+
         var formData = new FormData();
-        //console.log(fromGivenAddress(storeLocation));
         formData.append('description',details);
         formData.append('title', title);
         formData.append('date', new Date().toJSON());
         formData.append('task_type', "SP");
-        formData.append('s_longitude', /*fromGivenAddress(storeLocation).lng*/ -0.2620758943035952);
-        formData.append('s_latitude', /*fromGivenAddress(storeLocation).lat*/ 51.523001163042466);
-        formData.append('d_longitude', /*fromGivenAddress(deliveryAddress).lng*/ -0.2620758943035952);
-        formData.append('d_latitude', /*fromGivenAddress(deliveryAddress).lat*/ 51.523001163042466);
-        //console.log(formData);
+        formData.append('s_longitude', storeComputed.lng);
+        formData.append('s_latitude', storeComputed.lat);
+        formData.append('d_longitude', deliveryComputed.lng);
+        formData.append('d_latitude', deliveryComputed.lat);
         api.addTask(formData, localStorage.getItem('token')).then(function(response) {
-            alert("Task added");
+            store.addNotification({
+                title: "Task added!",
+                message: "Successfuly added a task!",
+                type: "success",
+                insert: "top",
+                container: "top-right",
+                dismiss: {
+                  duration: 5000,
+                  onScreen: true
+                }
+            });
         })
-    }
-
+    }, [storeComputed, deliveryComputed]);
 
     return (
         <div className="formStyle">
@@ -93,7 +118,7 @@ function CreateRequest() {
                 <Form.Group>
                     <Form.Label>Delivery Address</Form.Label>
                     {/* <Form.Control style={input} type="text" placeholder="Delivery address" value={deliveryAddress} onChange={(e) => setDeliveryAddress(e.target.value)}/> */}
-                    <Autocomplete style={input} options= {options}placeholder="Delivery address" apiKey={process.env.REACT_APP_API_KEY} value={deliveryAddress}  onChange={(e) => setDeliveryAddress(e.target.value)}/>
+                    <Autocomplete style={input} options={options} placeholder="Delivery address" apiKey={process.env.REACT_APP_API_KEY} value={deliveryAddress}  onChange={(e) => setDeliveryAddress(e.target.value)}/>
                 </Form.Group>
                 
                 <Form.Group>

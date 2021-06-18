@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useHistory } from "react-router-dom";
 import api from '../api/api';
 import '../css/Login.css'
+import { store } from 'react-notifications-component';
 
 const input = {
     display: "block",
@@ -43,7 +44,17 @@ function Login() {
             localStorage.setItem('username', username);
             history.push("/map");
         }).catch((error) => {
-            alert("Wrong login credentials! Try again.");   
+            store.addNotification({
+                title: "Wrong credentials!",
+                message: "Wrong username or password!",
+                type: "danger",
+                insert: "top",
+                container: "top-right",
+                dismiss: {
+                  duration: 5000,
+                  onScreen: true
+                }
+            });   
         });
     }
 
@@ -66,7 +77,7 @@ function Login() {
                 </Button>
             
                 <h1 className="signup"> New User? </h1>
-                <a className="signupLink" onClick={() => history.push('/signup')}>Sign Up</a>
+                <span className="signupLink" onClick={() => history.push('/signup')}>Sign Up</span>
     
             </Form>
             

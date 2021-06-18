@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useHistory } from "react-router-dom";
 import api from '../api/api';
 import '../css/Login.css'
+import { store } from 'react-notifications-component';
 
 const input = {
     display: "block",
@@ -49,7 +50,17 @@ function Signup() {
             console.log(response.data);
             history.push("/map");
         }).catch((error) => {
-            alert("Username/Email already taken");   
+            store.addNotification({
+                title: "Wrong credentials!",
+                message: "Username/email already taken.",
+                type: "warning",
+                insert: "top",
+                container: "top-right",
+                dismiss: {
+                  duration: 5000,
+                  onScreen: true
+                }
+            });   
         });
         
     }
@@ -80,7 +91,7 @@ function Signup() {
                     Sign Up
                 </Button>
                 <h1 className="signup"> Already have an account? </h1>
-                <a className="signupLink" onClick={() => history.push('/')}>Login</a>
+                <span className="signupLink" onClick={() => history.push('/')}>Login</span>
             </Form>
             
             <ul class="bg-bubbles">

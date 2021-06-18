@@ -51,3 +51,15 @@
 .chatStyle {
     width: 50%;
 }
+
+.ratingContainer {
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding: 8%;
+}
+
+.textStyle {
+    margin-top: 5%;
+}

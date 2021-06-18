@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import api from '../api/api'
 import '../css/CreateRequest.css'
+import { store } from 'react-notifications-component';
 
 const input = {
     display: "block",
@@ -55,7 +56,17 @@ function CreateRequest() {
         formData.append('task_type', "PC");
         formData.append('phone_number', phonenumber);
         api.addTask(formData, localStorage.getItem('token')).then(function(response) {
-            alert("Task added");
+            store.addNotification({
+                title: "Task added!",
+                message: "Successfuly added a task!",
+                type: "success",
+                insert: "top",
+                container: "top-right",
+                dismiss: {
+                  duration: 5000,
+                  onScreen: true
+                }
+            });
         })
     }
 

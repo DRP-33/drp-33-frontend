@@ -7,13 +7,13 @@ import api from '../api/api';
 
 
 function SupplyPopup(props) {
-    console.log(props);
 
     function accept() {
         var formData = new FormData();
         formData.append('task_id', props.props.task_id);
         formData.append('acceptor_id', '1');
         api.acceptTask(formData, localStorage.getItem('token'));
+        props.setTrigger(false);
     }
 
  

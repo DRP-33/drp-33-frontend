@@ -3,7 +3,6 @@ import React from 'react'
 import '../css/Popup.css'
 import '../fontawesome';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import api from '../api/api';
 import PhoneMarker from '../assets/phonemarker.png';
 import ShopMarker from '../assets/shopmarker.png';
 import MiscMarker from '../assets/miscmarker.png';

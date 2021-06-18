@@ -37,20 +37,26 @@ function MapComponent() {
     React.useEffect(() => {
         //console.log('Token ' + localStorage.getItem('token'));
         api.getTask(localStorage.getItem('token')).then(function (response){
-            setMyTasks(response.data);
+            setData(response.data);
+            setLen(response.data.length);
         });
 
         api.myTasks(localStorage.getItem('token')).then(function (response){
-            setData(response.data);
-            setLen(response.data.length);
+            setMyTasks(response.data);
         });
     }, []);
 
     function markers() {
         var marker = [];
-        //console.log(len);
+        console.log(myTasks);
         for(var i = 0; i < len; i++) {
-            if (!myTasks.includes(data[i])) {
+            var notMine = true;
+            for(var j = 0; j < myTasks.length; j++) {
+                if(myTasks[j].pk === data[i].pk) {
+                    notMine = false;
+                }
+            }
+            if(notMine) {
                 marker.push(Pin({fields: data[i].fields, key: data[i].pk, func: {showPopUp}}));
             }
         }
@@ -93,8 +99,7 @@ function MapComponent() {
             {markers()}
             {renderPopUp()}
             </GoogleMap>
-            
-        </LoadScript>
+            </LoadScript>
     )
 }
 

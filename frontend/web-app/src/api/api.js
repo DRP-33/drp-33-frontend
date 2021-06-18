@@ -101,6 +101,16 @@ const api = {
             'Content-Type': 'application/json',
             'Authorization': 'Token ' + token
         }
+    }),
+    giveRating: (data, token) =>
+    instance({
+        'method': 'post',
+        'url': '/raiting_g/',
+        'data': data,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+        }
     })
 }
 

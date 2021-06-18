@@ -1,7 +1,5 @@
-import { createPath } from 'history';
 import React from 'react'
 import { useHistory } from "react-router-dom";
-import api from '../api/api';
 import PhoneMarker from '../assets/phonemarker.png';
 import ShopMarker from '../assets/shopmarker.png';
 import MiscMarker from '../assets/miscmarker.png';

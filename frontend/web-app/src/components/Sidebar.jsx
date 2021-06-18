@@ -1,5 +1,5 @@
 import { faQuestionCircle, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faPlus, faTasks, faMapMarkedAlt, faQuestion, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTasks, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import '../fontawesome';

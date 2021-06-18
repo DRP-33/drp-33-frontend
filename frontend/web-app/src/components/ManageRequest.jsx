@@ -1,9 +1,6 @@
-import { faCalendar } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontawesome';
 import '../css/ManageRequest.css'
 import React from 'react';
-import { useHistory } from "react-router-dom";
 import api from '../api/api.js';
 import TaskElem from './TaskElem.jsx'
 
@@ -20,12 +17,14 @@ function ManageRequest() {
             setMyLen(response.data.length);
             //console.log('MyTasks: ' + myTasks);
         });
+    }, []);
+
+    React.useEffect(() => {
         api.acceptedTasks(localStorage.getItem('token')).then(function (response){
             setAcceptedTasks(response.data);
             setAcceptedLen(response.data.length);
             //console.log('Accepted: ' + response.data.length + acceptedTasks);
         });
-
     }, []);
 
     function accpetedRequests() {
@@ -44,7 +43,6 @@ function ManageRequest() {
         return requests;
     }
 
-    const history = useHistory();
     return (
         <div className="manageRequestStyle">
             <div className="container">
