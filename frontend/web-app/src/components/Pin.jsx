@@ -4,7 +4,7 @@ import ShopMarker from '../assets/shopmarker.png';
 import MiscMarker from '../assets/miscmarker.png';
 
 function Pin(props) {
-    var position = {lat: parseFloat(props.fields.s_latitude), lng: parseFloat(props.fields.s_longitude)};
+    var position = {lat: parseFloat(props.fields.d_latitude), lng: parseFloat(props.fields.d_longitude)};
     var key = props.key;
     var data = { fields: props.fields, task_id: key };
     var type = props.fields.t_type;
