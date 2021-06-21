@@ -1,7 +1,8 @@
 import React from 'react';
 import Pin from './Pin.jsx';
 import api from '../api/api';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap } from '@react-google-maps/api';
+import LoadScript from './LoadScriptExtended.jsx';
 import PhonePopup from './PhonePopup.jsx';
 import SupplyPopUp from './SupplyPopUp.jsx';
 import OtherPopup from './OtherPopup.jsx';
