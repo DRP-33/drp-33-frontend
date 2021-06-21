@@ -114,14 +114,14 @@ function CreateRequest() {
                 <Form.Group>
                     <Form.Label>Store Location</Form.Label>
                     {/* <Form.Control style={input} type="text" placeholder="Store location" value={storeLocation} onChange={(e) => setStoreLocation(e.target.value)}/> */}
-                    <Autocomplete style={input} options= {options} placeholder="Store location" apiKey={process.env.REACT_APP_API_KEY} value={storeLocation} onChange={(e) => setStoreLocation(e.target.value)}/>
+                    <Autocomplete style={input} id="storeLocation" options= {options} placeholder="Store location" apiKey={process.env.REACT_APP_API_KEY} inputAutocompleteValue={storeLocation} onPlaceSelected={(place) => setStoreLocation(place.formatted_address)}/>
                 
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Delivery Address</Form.Label>
                     {/* <Form.Control style={input} type="text" placeholder="Delivery address" value={deliveryAddress} onChange={(e) => setDeliveryAddress(e.target.value)}/> */}
-                    <Autocomplete style={input} options={options} placeholder="Delivery address" apiKey={process.env.REACT_APP_API_KEY} value={deliveryAddress}  onChange={(e) => setDeliveryAddress(e.target.value)}/>
+                    <Autocomplete style={input} options={options} placeholder="Delivery address" apiKey={process.env.REACT_APP_API_KEY} inputAutocompleteValue={deliveryAddress}  onPlaceSelected={(place) => setDeliveryAddress(place.formatted_address)}/>
                 </Form.Group>
                 
                 <Form.Group>
