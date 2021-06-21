@@ -16,6 +16,7 @@ import "../css/Chat.css"
 class ChatComponent extends Component {
   constructor(props) {
     super(props);
+    console.log(process.env.REACT_APP_STREAM_API_KEY);
     this.client = StreamChat.getInstance(process.env.REACT_APP_STREAM_API_KEY);
     const task = localStorage.getItem('task');
 
