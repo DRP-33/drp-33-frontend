@@ -87,8 +87,6 @@ function ChatView() {
                     }
                 });
                 setRating(rate);
-            }).catch(function(error) {
-                alert('Something went wrong');
             });
         }
     }
@@ -110,8 +108,6 @@ function ChatView() {
                       duration: 5000,
                       onScreen: true
                     }
-                }).catch(function(error) {
-                    alert('Something went wrong');
                 });
                 setRating(rate);
             });
