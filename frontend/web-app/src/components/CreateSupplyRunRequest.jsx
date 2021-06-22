@@ -80,6 +80,8 @@ function CreateRequest() {
         formData.append('title', title);
         formData.append('date', new Date().toJSON());
         formData.append('task_type', "SP");
+        formData.append('store_addr', storeLocation);
+        formData.append('delivery_addr', deliveryAddress);
         formData.append('s_longitude', storeComputed.lng);
         formData.append('s_latitude', storeComputed.lat);
         formData.append('d_longitude', deliveryComputed.lng);

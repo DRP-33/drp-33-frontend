@@ -74,6 +74,7 @@ function CreateRequest() {
         formData.append('title', title);
         formData.append('date', new Date().toJSON());
         formData.append('task_type', "OT");
+        formData.append('delivery_addr', location);
         formData.append('d_longitude', locationComputed.lng);
         formData.append('d_latitude', locationComputed.lat);
         api.addTask(formData, localStorage.getItem('token')).then(function(response) {
@@ -106,7 +107,7 @@ function CreateRequest() {
                 <Form.Group>
                     <Form.Label>Location</Form.Label>
                     {/* <Form.Control style={input} type="text" placeholder="Store location" value={storeLocation} onChange={(e) => setStoreLocation(e.target.value)}/> */}
-                    <Autocomplete style={input} options= {options} placeholder="Location of a task" apiKey={process.env.REACT_APP_API_KEY} value={location} onChange={(e) => setLocation(e.target.value)}/>
+                    <Autocomplete style={input} options={options} placeholder="Location of a task" apiKey={process.env.REACT_APP_API_KEY} inputAutocompleteValue={location}  onPlaceSelected={(place) => setLocation(place.formatted_address)}/>
                 
                 </Form.Group>
                 
