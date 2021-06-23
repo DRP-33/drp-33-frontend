@@ -154,7 +154,7 @@ function ChatView() {
                     </div>}
 
 
-                    {acceptor_user != null && acceptor_user.username === localStorage.getItem('username') && <button className="button" onClick={() => cancel(id)}>End request</button>}
+                    {acceptor_user != null && acceptor_user.username === localStorage.getItem('username') && <button className="button" onClick={() => cancel(id)}>Complete request</button>}
                     
                     {!(acceptor_user == null) && <button className="button grey">Task accepted</button>}
                     

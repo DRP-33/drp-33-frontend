@@ -16,7 +16,7 @@ function SupplyPopup(props) {
         api.acceptTask(formData, localStorage.getItem('token')).then(() => {
             store.addNotification({
                 title: "Accepted request",
-                message: "Succesfully accepted a reqyest!",
+                message: "Succesfully accepted a request!",
                 type: "success",
                 insert: "top",
                 container: "top-right",
