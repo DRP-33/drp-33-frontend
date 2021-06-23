@@ -89,7 +89,7 @@ function CreateRequest() {
         api.addTask(formData, localStorage.getItem('token')).then(function(response) {
             store.addNotification({
                 title: "Task added!",
-                message: "Successfuly added a task!",
+                message: "Successfully added a task!",
                 type: "success",
                 insert: "top",
                 container: "top-right",

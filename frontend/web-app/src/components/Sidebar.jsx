@@ -16,7 +16,7 @@ function Sidebar() {
 
     return (
         <div className="sidebarStyle">
-            <h1 className="headingStyle">DRP33</h1>
+            <h1 className="headingStyle">Assistly</h1>
             <div>
             <ul className="listStyle">  
                 <li className=" clickableListEntry" onClick={() => history.push('/map')}>
