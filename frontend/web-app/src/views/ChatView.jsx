@@ -62,6 +62,17 @@ function ChatView() {
         var formData = new FormData();
         formData.append('task_id', id); 
         api.cancelTask(formData, localStorage.getItem('token')).then(function(response) {
+            store.addNotification({
+                title: "Completed request!",
+                message: "Succesfully completed the request",
+                type: "success",
+                insert: "top",
+                container: "top-right",
+                dismiss: {
+                  duration: 5000,
+                  onScreen: true
+                }
+            });
             history.push("/map");
         }).catch((error) => {
             alert("Something went wrong");   
@@ -154,7 +165,7 @@ function ChatView() {
                     </div>}
 
 
-                    {acceptor_user != null && acceptor_user.username === localStorage.getItem('username') && <button className="button" onClick={() => cancel(id)}>End request</button>}
+                    {acceptor_user != null && acceptor_user.username === localStorage.getItem('username') && <button className="button" onClick={() => cancel(id)}>Complete request</button>}
                     
                     {!(acceptor_user == null) && <button className="button grey">Task accepted</button>}
                     
